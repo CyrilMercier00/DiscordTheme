@@ -15,8 +15,11 @@
 5. Member list & details
     -108: Hide sidebar
     -161: Square profile picture
-6. Server list
+6. Server list + home icon
 7. Channels list
+8. Find Communities
+9. Menu bar
+10. Channel header bar
 ------------------------------------------------------------------*/
 
 
@@ -24,10 +27,12 @@
 @import url(fonts.googleapis.com/css?family=Zilla+Slab:500) ;
 
 :root {
-    --background-image-url: url("https://i.imgur.com/N8xMPkW.jpg") ;    /* Background image */
+                                                                        /* https://i.imgur.com/N8xMPkW.jpg - Rain */
+
+    --background-image-url: url("https://i.imgur.com/N8xMPkW.jpg") ;    /* Background image. Make sure it point to the image itself and not the page hosting the image. */
     --background-transparency: 0.05 ;                                   /* Overall transparency */
 
-    --font-size : 16px ;                                                /* Default 16px*/
+    --font-size : 16px ;                                                /* Default 16px */
 
     --home-image: url("https://i.imgur.com/vJ6EO68.jpg") ;              /* Home picture (top left) */
     
@@ -44,12 +49,20 @@
     --member-detail-color-playing: rgba(164, 189, 252, 0.75);           /* Color when someone is in game*/
     
     /* [ Server list ] */
-    --border-color: rgba(70,102,255,0.8) ;                              /* Top and bottom color */
+    --border-color: rgba(164, 189, 252, 0.35) ;                         /* Color of the top an bottom borders*/
+
+    /* [ Server Discovery ] */
+    --inner-color : rgba(164, 189, 252, 0.35);                          /* Color when hovering over a server - Default is (35,39,42,1) */
+
+    /* [ Menu bar (the bar at the top) ] */
+    --minimize-color: rgba(255, 255, 255,1);                            /* Color of the minimize button */
+    --maximize-color: rgba(255, 255, 255, 1);                           /* Color of the maximize button */
+    --close-color: rgba(255,255,255,1);                                 /* Color of the close window button */
 }
 
 #app-mount {
     font-family: 'Zilla Slab', serif ;
-    font-size: var(--font-size);             
+    font-size: var(--font-size);         
 }
 
 
@@ -71,10 +84,9 @@
 #app-mount .root-1BQpZw,                    /* giftinventory    */
 #app-mount .applicationStore-1pNvnv,        /* store    */
 #app-mount .lfg-3zDSPN,                     /* LFG */
-#app-mount .container-3gCOGc,               /* friends */
-#app-mount .pageWrapper-1PgVDX,             /* guilddiscovery */
+#app-mount .container-3gCOGc,               /* Friends */
 #app-mount .scroller-2FKFPG,                /* scroller	*/
-#app-mount .standardSidebarView-3F1I7i,     /* settings */
+#app-mount .standardSidebarView-3F1I7i,     /* Settings */
 #app-mount .contentRegion-3nDuYy,
 #app-mount .sidebarRegion-VFTUkN,
 #app-mount .wrapper-1Rf91z,                 /* Guilds container */
@@ -97,7 +109,8 @@
 
 /* ---- 3. BACKGROUND ---- */
 #app-mount {
-    background-image: var(--background-image-url) ;
+    /* background-image: var(--background-image-url) ; */
+    background-color: #8B8878;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -113,12 +126,15 @@
     overflow: visible;
 }
 
-#app-mount .messages-3amgkR:hover {
+#app-mount .messages-3amgkR:hover {     /* Message screen */
     background-color: rgba(0,0,0,0.4);
     transition: 500ms ease;
+    width: 50rem;
 }
 
-
+#app-mount .chatContent-a9vAAp {        /* Chat wrapper */
+    margin-right: 0px;
+}
 
 
 
@@ -195,14 +211,17 @@
   transition: all .9s ease;
    opacity: 1 !important;
 }
+
 .containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {
   width: 60px !important;
   height: 60px !important;
 }
+
 /* Allows you to change border-radius don't touch */
 .avatar-17mtNa .wrapper-3t9DeA foreignObject[mask] {
     mask: none;
 }
+
 /* Changes Border-Radius */
 .avatar-VxgULZ {
     border-radius: 10px;
@@ -214,7 +233,8 @@
 }
 
 #app-mount .wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Position */
-    x: 0; y: 0; 
+    x: 0; 
+    y: 0; 
 }
 
 #app-mount .wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Properly size images in datails window  */
@@ -222,7 +242,10 @@
 }
 
 #app-mount .wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Properly size images in sidebar  */
-    width: 32px; height: 32px; overflow: visible; x: -14.5; y: -17; 
+    width: 32px; height: 32px; 
+    overflow: visible; 
+    x: -14.5; 
+    y: -17; 
 }
 
 #app-mount .wrapper-3t9DeA img {    /* Make images square */
@@ -290,7 +313,6 @@
     stroke: var(--rs-invisible-color); 
 }
 
-
 /* Proper size chat click */
 #app-mount .wrapper-3t9DeA rect[x="16"] { 
     width: 24px; height: 24px; 
@@ -329,7 +351,9 @@
 
 
 
-/* ---- 6. SERVER LIST ---- */
+
+
+/* ---- 6. SERVER LIST + HOME ICON ---- */
 #app-mount .guilds-1SWlCJ {
     border: solid;
     border-color:  var(--border-color) rgba(0,0,0,0);
@@ -339,9 +363,72 @@
     margin-bottom: 0.5%;
 }
 
-/* ---- 7. Channels ---- */
-#app-mount  .container-PNkimc:hover {
+svg [name='Nova_Discord'] {                     /* Home icon */
+
+    background-image: var(--home-image);  
+    width: 48px ;
+    height: 48px ;
+    background-size: cover;
+}
+
+svg [name='Nova_Discord']>path {                /* Remove the discord icon */
+    display: none ;
+}
+
+
+
+
+
+/* ---- 7. CHANNELS ---- */
+#app-mount .container-PNkimc>div:hover {        /* Inside the channel list wrapper */
     background-color: rgba(0,0,0,0.3);
     transition: 300ms ease;
 }
 
+#app-mount .sidebar-2K8pFh {                    /* Server channel bar */
+    margin-right: 1rem ;
+    margin-left: 1rem ;
+}
+
+
+
+
+
+/* ---- 8. FIND COMMUNITIES ---- */
+#app-mount .pageWrapper-1PgVDX {            /* Container */
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#app-mount .card-3DjzTQ:hover {             /* Servers */
+background: var(--inner-color);
+}
+
+
+
+
+
+/* ---- 9. MENU BAR ---- */
+#app-mount .typeWindows-1za-n7 {            /* Top bar */
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.25));
+    margin-top: 0px;
+    padding-top: 3px;
+    margin-bottom: 0.2rem;
+}
+
+#app-mount .winButtonMinMax-PBQ3gm:hover {          /* Minimize window */
+    color: var(--minimize-color);
+}
+
+
+
+
+
+/* ---- 10. CHANNEL HEADER BAR ---- */
+
+#app-mount .container-1r6BKw.themed-ANHk51 {        /* Channel header bar */
+    background-color:rgba(0, 0, 0, 0.10);
+}
+
+#app-mount .children-19S4PO::after {                /* Remove the annoying bar before the bell */
+    content: none ;
+}
