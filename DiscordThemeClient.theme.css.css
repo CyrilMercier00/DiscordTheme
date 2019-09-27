@@ -1,0 +1,34 @@
+/**
+ * @name Incroyable du cul
+ * @author equilix
+ * @version 1.0.0
+ * @description Mon theme
+*/
+
+@import url(fonts.googleapis.com/css?family=Zilla+Slab:500) ;
+@import url();
+
+:root {
+    --background-image-url: url("https://i.imgur.com/N8xMPkW.jpg") ;    /* Background image */
+    --background-transparency: 0.05 ;                                   /* Overall transparency */
+
+    --font-size : 16px ;                                                /* Default 16px*/
+
+    --home-image: url("https://i.imgur.com/vJ6EO68.jpg") ;              /* Home picture (top left) */
+    
+    
+    /* [ Member status ] */
+    --rs-width: 2px;                                                      /* Width/thickness of status border */
+    --rs-online-color: #43b581;                                         /* Color for online status */
+    --rs-idle-color: #faa61a;                                           /* Color for idle status */
+    --rs-dnd-color: #f04747;                                            /* Color for do not disturb status */
+    --rs-offline-color: #636b75;                                        /* Color for offline status */
+    --rs-invisible-color: #8B4513;                                      /* Color for invisible status - Note this will only show for your own invisibility */
+    --rs-streaming-color: #643da7;                                      /* Color for streaming status */
+    
+    --member-detail-color-playing: rgba(164, 189, 252, 0.75);           /* Color when someone is in game*/
+    
+    /* [ Server list ] */
+    --border-color: rgba(70,102,255,0.8) ;                              /* Top and bottom color */
+}
+
