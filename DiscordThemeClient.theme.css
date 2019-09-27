@@ -6,7 +6,7 @@
 */
 
 @import url(fonts.googleapis.com/css?family=Zilla+Slab:500) ;
-@import url();
+@import url(https://raw.githubusercontent.com/equilix/DiscordTheme/master/DiscordThemeMain.theme.css);
 
 :root {
     --background-image-url: url("https://i.imgur.com/N8xMPkW.jpg") ;    /* Background image */

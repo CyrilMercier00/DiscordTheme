@@ -1,0 +1,347 @@
+/**
+ * @name Incroyable du cul
+ * @author equilix
+ * @version 1.0.0
+ * @description Mon theme
+*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Font
+2. Transparency
+3. Background
+4. Chat 
+5. Member list & details
+    -108: Hide sidebar
+    -161: Square profile picture
+6. Server list
+7. Channels list
+------------------------------------------------------------------*/
+
+
+/* ---- 1. FONT ---- */
+@import url(fonts.googleapis.com/css?family=Zilla+Slab:500) ;
+
+:root {
+    --background-image-url: url("https://i.imgur.com/N8xMPkW.jpg") ;    /* Background image */
+    --background-transparency: 0.05 ;                                   /* Overall transparency */
+
+    --font-size : 16px ;                                                /* Default 16px*/
+
+    --home-image: url("https://i.imgur.com/vJ6EO68.jpg") ;              /* Home picture (top left) */
+    
+    
+    /* [ Member status ] */
+    --rs-width: 2px;                                                      /* Width/thickness of status border */
+    --rs-online-color: #43b581;                                         /* Color for online status */
+    --rs-idle-color: #faa61a;                                           /* Color for idle status */
+    --rs-dnd-color: #f04747;                                            /* Color for do not disturb status */
+    --rs-offline-color: #636b75;                                        /* Color for offline status */
+    --rs-invisible-color: #8B4513;                                      /* Color for invisible status - Note this will only show for your own invisibility */
+    --rs-streaming-color: #643da7;                                      /* Color for streaming status */
+    
+    --member-detail-color-playing: rgba(164, 189, 252, 0.75);           /* Color when someone is in game*/
+    
+    /* [ Server list ] */
+    --border-color: rgba(70,102,255,0.8) ;                              /* Top and bottom color */
+}
+
+#app-mount {
+    font-family: 'Zilla Slab', serif ;
+    font-size: var(--font-size);             
+}
+
+
+
+
+
+/* ---- 2. TRANSPARENCY ---- */
+#app-mount,
+#app-mount .app-19_DXt,                     /* appcontainer*/
+#app-mount .app-2rEoOp,                     /* appinner	*/
+#app-mount .layer-3QrUeG,                   /* layercontainer*/
+#app-mount .container-PNkimc,               /* channels	inner*/
+#app-mount .privateChannels-1nO12o,         /* dmchannels*/
+#app-mount .panels-j1Uci_ > *,              /* account/voiceinner*/
+#app-mount .chat-3bRxxu,                    /* chatcontainer*/
+#app-mount .noChannel-Z1DQK7,               /* nochannel*/
+#app-mount .activityFeed-1C0EmJ,            /* activityfeed */
+#app-mount .gameLibrary-TTDw4Y,             /* library  */
+#app-mount .root-1BQpZw,                    /* giftinventory    */
+#app-mount .applicationStore-1pNvnv,        /* store    */
+#app-mount .lfg-3zDSPN,                     /* LFG */
+#app-mount .container-3gCOGc,               /* friends */
+#app-mount .pageWrapper-1PgVDX,             /* guilddiscovery */
+#app-mount .scroller-2FKFPG,                /* scroller	*/
+#app-mount .standardSidebarView-3F1I7i,     /* settings */
+#app-mount .contentRegion-3nDuYy,
+#app-mount .sidebarRegion-VFTUkN,
+#app-mount .wrapper-1Rf91z,                 /* Guilds container */
+#app-mount .inner-zqa7da,                   /* Chat input bar */
+#app-mount .sidebar-2K8pFh,                 /* Channel container */
+#app-mount .panels-j1Uci_,                  /* Bottom status bar */
+#app-mount .container-1r6BKw.themed-ANHk51, /* Channel header, notif, pinned,etc. */
+#app-mount .membersWrap-2h-GB4              /* Members */
+{						
+    background: rgba(0, 0, 0, var(--background-transparency));
+}
+
+/* Remove scrollbar */
+.firefoxFixScrollFlex-cnI2ix::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+/* ---- 3. BACKGROUND ---- */
+#app-mount {
+    background-image: var(--background-image-url) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+/* ---- 4. CHAT  ----*/
+#app-mount .inner-zqa7da:hover {        /* Message input bar */
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.8s ease;
+    overflow: visible;
+}
+
+#app-mount .messages-3amgkR:hover {
+    background-color: rgba(0,0,0,0.4);
+    transition: 500ms ease;
+}
+
+
+
+
+
+/* ---- 5. MEMBER LIST & details ----*/
+    /* Hide sidebar*/
+#app-mount .chat-3bRxxu .content-yTz4x3>.flex-1O1GKY:only-child {  /* Collapsed Member List */
+    margin-right: 0px;
+}
+
+#app-mount .searchResultsWrap-2DKFzt {
+    z-index: 200 ;
+}
+
+#app-mount .content-yTz4x3>.flex-1O1GKY {      /* Member list position */
+    margin-right: -185px;
+    z-index: 100;
+}
+
+/* Collapses Member List */
+#app-mount .membersWrap-2h-GB4 {
+    transform: translate(185px);
+    transition: all 0.5s ease;
+    z-index: 100;
+}
+
+/* Remove member details when not hovering */
+#app-mount .members-1998pB .membersGroup-v9BXpm,
+#app-mount .content-3QAtGj, 
+#app-mount .name-uJV0GL {  
+    opacity: 0;
+    transition:opacity 1s ease;
+}
+
+/* Shows Up on Hover */
+#app-mount .members-1998pB:hover .content-3QAtGj,
+#app-mount .members-1998pB:hover .name-uJV0GL,
+#app-mount .membersWrap-2h-GB4:hover,
+#app-mount .membersWrap-2h-GB4:hover {
+    opacity: 1;
+    transform: translate(0px);
+    transition: all 0.5s ease;
+}
+
+#app-mount .membersWrap-2h-GB4:hover {  /* Member container opacity */
+    background: rgba(0,0,0,0.5);
+    transition: all 300ms ease;
+}
+
+/* So Private Channels don't get effected by the code */
+#app-mount .privateChannels-1nO12o .content-3QAtGj, 
+#app-mount .privateChannels-1nO12o .name-uJV0GL,
+#app-mount .content-98HsJk {
+    opacity: 1;
+}
+
+
+#app-mount .members-1998pB:hover .membersGroup-v9BXpm {
+    font-size: 12px;
+    width: 100% !important;
+    text-align:left;
+    opacity: 1;
+}
+
+#app-mount .members-1998pB:hover { 
+    transform:translate(0px)
+}
+
+    /* Square profile picture */
+
+/* Change Avatar Size and Background-size is no longer needed */
+.containerCozyBounded-1rKFAn .wrapper-3t9DeA {
+  width: 40px !important;
+  height: 40px !important;
+  transition: all .9s ease;
+   opacity: 1 !important;
+}
+.containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {
+  width: 60px !important;
+  height: 60px !important;
+}
+/* Allows you to change border-radius don't touch */
+.avatar-17mtNa .wrapper-3t9DeA foreignObject[mask] {
+    mask: none;
+}
+/* Changes Border-Radius */
+.avatar-VxgULZ {
+    border-radius: 10px;
+}
+
+
+#app-mount .wrapper-3t9DeA * { /* Allow changes */
+    overflow: visible; mask: none; 
+}
+
+#app-mount .wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Position */
+    x: 0; y: 0; 
+}
+
+#app-mount .wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Properly size images in datails window  */
+    width: 80px; height: 80px; 
+}
+
+#app-mount .wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Properly size images in sidebar  */
+    width: 32px; height: 32px; overflow: visible; x: -14.5; y: -17; 
+}
+
+#app-mount .wrapper-3t9DeA img {    /* Make images square */
+    border-radius: 0%; 
+}
+
+#app-mount .wrapper-3t9DeA[aria-label*="mobile"]:after { /* Mobile icon */
+    content: ""; 
+    -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPHBhdGggZD0iTTE1LjUgMWgtOEM2LjEyIDEgNSAyLjEyIDUgMy41djE3QzUgMjEuODggNi4xMiAyMyA3LjUgMjNoOGMxLjM4IDAgMi41LTEuMTIgMi41LTIuNXYtMTdDMTggMi4xMiAxNi44OCAxIDE1LjUgMXptLTQgMjFjLS44MyAwLTEuNS0uNjctMS41LTEuNXMuNjctMS41IDEuNS0xLjUgMS41LjY3IDEuNSAxLjUtLjY3IDEuNS0xLjUgMS41em00LjUtNEg3VjRoOXYxNHoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg=="); 
+    -webkit-mask-size: 16px; 
+    -webkit-mask-repeat: no-repeat; 
+    -webkit-mask-position: center; display: block; position: absolute; 
+    width: 12px; height: 16px; top: 50%; 
+    transform: translateY(-50%); right: -171px; 
+    background: var(--rs-online-color); z-index: 1; 
+}
+
+
+#app-mount .wrapper-3t9DeA rect { /* Limit outline & position in detail tab */
+    x: 0; 
+    y: 0; 
+    width: 100%; 
+    height: 100%; 
+    fill: transparent; 
+    stroke-width: var(--rs-width); 
+}
+
+/* Online  */
+#app-mount .wrapper-3t9DeA rect[fill="#43b581"], 
+#app-mount .wrapper-3t9DeA rect[fill="rgba(67, 181, 129, 1)"], 
+#app-mount .wrapper-3t9DeA rect[mask*="online"] { 
+    stroke: var(--rs-online-color); 
+}
+
+/* Idle */
+#app-mount .wrapper-3t9DeA rect[fill="#faa61a"],
+#app-mount .wrapper-3t9DeA rect[fill="rgba(250, 166, 26, 1)"], 
+#app-mount .wrapper-3t9DeA rect[mask*="idle"] { 
+    stroke: var(--rs-idle-color); 
+}
+
+/* Do not disturb */
+#app-mount .wrapper-3t9DeA rect[fill="#f04747"], /* */
+#app-mount .wrapper-3t9DeA rect[fill="rgba(240, 71, 71, 1)"], 
+#app-mount .wrapper-3t9DeA rect[mask*="dnd"] { 
+    stroke: var(--rs-dnd-color); 
+}
+
+/* Streaming */
+#app-mount .wrapper-3t9DeA rect[fill="#593695"],
+#app-mount .wrapper-3t9DeA rect[mask*="streaming"] { 
+    stroke: var(--rs-streaming-color); 
+}
+
+/* Offline */
+#app-mount .wrapper-3t9DeA rect[fill="#747f8d"], 
+#app-mount .wrapper-3t9DeA rect[mask*="offline"] {
+    stroke: var(--rs-offline-color); 
+}
+
+/* Invisible */
+#app-mount .wrapper-3t9DeA rect[mask*="invisible"],
+#app-mount .wrapper-3t9DeA rect[fill="rgba(116, 127, 141, 1)"] 
+{ 
+    stroke: var(--rs-invisible-color); 
+}
+
+
+/* Proper size chat click */
+#app-mount .wrapper-3t9DeA rect[x="16"] { 
+    width: 24px; height: 24px; 
+}
+
+#app-mount .wrapper-3t9DeA rect[x="28"] { 
+    width: 40px; height: 40px; overflow: visible; 
+}
+
+#app-mount .avatarHint-1qgaV3 foreignObject { 
+    mask: none; 
+}
+
+#app-mount .avatarHint-1qgaV3 .avatarHintInner-Dco91E { 
+    border-radius: 50% !important; 
+}
+
+#app-mount .message-1PNnaP .mask-1l8v16 img { 
+    clip-path: circle(calc(19px - var(--rs-small-spacing))); 
+}
+
+#app-mount .memberOffline-2lN7gt img { 
+    clip-path: none !important; 
+}
+
+#app-mount .header-QKLPzZ .wrapper-3t9DeA { 
+    margin-right: 20px !important; 
+}
+
+
+    /*  MEMBER DETAILS  */
+#app-mount .headerPlaying-j0WQBV, 
+#app-mount .headerStreaming-2FjmGz {
+    background-color: var(--member-detail-color-playing);
+}
+
+
+
+/* ---- 6. SERVER LIST ---- */
+#app-mount .guilds-1SWlCJ {
+    border: solid;
+    border-color:  var(--border-color) rgba(0,0,0,0);
+    border-radius: 30px;
+    border-width: 3px;
+    border-style: double;
+    margin-bottom: 0.5%;
+}
+
+/* ---- 7. Channels ---- */
+#app-mount  .container-PNkimc:hover {
+    background-color: rgba(0,0,0,0.3);
+    transition: 300ms ease;
+}
+
