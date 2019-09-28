@@ -46,7 +46,7 @@
     --rs-invisible-color: #8B4513;                                      /* Color for invisible status - Note this will only show for your own invisibility */
     --rs-streaming-color: #643da7;                                      /* Color for streaming status */
     
-    --member-detail-color-playing: rgba(164, 189, 252, 0.75);           /* Color when someone is in game*/
+    --member-detail-color-playing: rgba(164, 189, 252, 1);              /* Color when someone is in game*/
     
     /* [ Server list ] */
     --border-color: rgba(164, 189, 252, 0.35) ;                         /* Color of the top an bottom borders*/
@@ -109,8 +109,8 @@
 
 /* ---- 3. BACKGROUND ---- */
 #app-mount {
-    /* background-image: var(--background-image-url) ; */
-    background-color: #8B8878;
+    background-image: var(--background-image-url) ;
+    /* background-color: #8B8878; */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -120,10 +120,20 @@
 
 
 /* ---- 4. CHAT  ----*/
+#app-mount .da-chat {                   /* Chat wrapper */
+margin-bottom: 0.5rem;
+}
+
 #app-mount .inner-zqa7da:hover {        /* Message input bar */
     background: rgba(0, 0, 0, 0.4);
     transition: all 0.8s ease;
     overflow: visible;
+}
+
+#app-mount .da-form {                   /* Message input bar wrapper */
+    background-color:inherit;
+    margin: 0;
+    padding: 2px;
 }
 
 #app-mount .messages-3amgkR:hover {     /* Message screen */
@@ -132,9 +142,6 @@
     width: 50rem;
 }
 
-#app-mount .chatContent-a9vAAp {        /* Chat wrapper */
-    margin-right: 0px;
-}
 
 
 
@@ -157,7 +164,6 @@
 #app-mount .membersWrap-2h-GB4 {
     transform: translate(185px);
     transition: all 0.5s ease;
-    z-index: 100;
 }
 
 /* Remove member details when not hovering */
@@ -191,10 +197,10 @@
 }
 
 
-#app-mount .members-1998pB:hover .membersGroup-v9BXpm {
+#app-mount .members-1998pB:hover .membersGroup-v9BXpm {     /* Roles in list */
     font-size: 12px;
-    width: 100% !important;
-    text-align:left;
+    text-align:center;
+    margin-bottom: 2px;
     opacity: 1;
 }
 
@@ -202,51 +208,40 @@
     transform:translate(0px)
 }
 
+    /* Bigger profile picture on hover */
+#app-mount  .containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {    /* Resize on hover */
+  transform: scale(2);
+  transition: all .7s ease;
+  z-index: 1;
+}
+
     /* Square profile picture */
-
-/* Change Avatar Size and Background-size is no longer needed */
-.containerCozyBounded-1rKFAn .wrapper-3t9DeA {
-  width: 40px !important;
-  height: 40px !important;
-  transition: all .9s ease;
-   opacity: 1 !important;
-}
-
-.containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {
-  width: 60px !important;
-  height: 60px !important;
-}
-
-/* Allows you to change border-radius don't touch */
-.avatar-17mtNa .wrapper-3t9DeA foreignObject[mask] {
-    mask: none;
-}
-
-/* Changes Border-Radius */
-.avatar-VxgULZ {
-    border-radius: 10px;
-}
-
-
-#app-mount .wrapper-3t9DeA * { /* Allow changes */
+#app-mount .wrapper-3t9DeA * {                              /* Allow changes */
     overflow: visible; mask: none; 
 }
 
-#app-mount .wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Position */
+#app-mount .wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Status position in member list */
     x: 0; 
     y: 0; 
 }
 
-#app-mount .wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Properly size images in datails window  */
-    width: 80px; height: 80px; 
+#app-mount .wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Status when profile detail */
+    width: 80px; 
+    height: 80px;
 }
 
-#app-mount .wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Properly size images in sidebar  */
+#app-mount .wrapper-3t9DeA .cursorDefault-dsQJ1n rect {     /* Status when profile detail */
+    x: -49;
+    y: -53; 
+}
+
+#app-mount .wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Status position in member list  */
     width: 32px; height: 32px; 
     overflow: visible; 
     x: -14.5; 
     y: -17; 
 }
+
 
 #app-mount .wrapper-3t9DeA img {    /* Make images square */
     border-radius: 0%; 
@@ -254,7 +249,7 @@
 
 #app-mount .wrapper-3t9DeA[aria-label*="mobile"]:after { /* Mobile icon */
     content: ""; 
-    -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPHBhdGggZD0iTTE1LjUgMWgtOEM2LjEyIDEgNSAyLjEyIDUgMy41djE3QzUgMjEuODggNi4xMiAyMyA3LjUgMjNoOGMxLjM4IDAgMi41LTEuMTIgMi41LTIuNXYtMTdDMTggMi4xMiAxNi44OCAxIDE1LjUgMXptLTQgMjFjLS44MyAwLTEuNS0uNjctMS41LTEuNXMuNjctMS41IDEuNS0xLjUgMS41LjY3IDEuNSAxLjUtLjY3IDEuNS0xLjUgMS41em00LjUtNEg3VjRoOXYxNHoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg=="); 
+    -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDouODggNi4xMiAyMyA3LjUgMjNoOGMxLjM4IDAgMi41LTEuMTIgMi41LTIuNXYtMTdDMTggMi4xMiAxNi44OCAxIDE1LjUgMXptLTQgMjFjLS44MyAwLTEuNS0uNjctMS41LTEuNXMuNjctMS41IDEuNS0xLjUgMS41LjY3IDEuNSAxLjUtLjY3IDEuNS0xLjUgMS41em00LjUtNEg3VjRoOXYxNHoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZvL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPHBhdGggZD0iTTE1LjUgMWgtOEM2LjEyIDEgNSAyLjEyIDUgMy41djE3QzUgMjEnPg=="); 
     -webkit-mask-size: 16px; 
     -webkit-mask-repeat: no-repeat; 
     -webkit-mask-position: center; display: block; position: absolute; 
@@ -345,30 +340,33 @@
 
     /*  MEMBER DETAILS  */
 #app-mount .headerPlaying-j0WQBV, 
-#app-mount .headerStreaming-2FjmGz {
+#app-mount .headerStreaming-2FjmGz {        /* Color when playing or streaming */
     background-color: var(--member-detail-color-playing);
+}
+
+#app-mount .body-3iLsc4 {       /* Role and notes */
+    background-color: #2f3136;
+    color: hsla(0,0%,100%,.8);
 }
 
 
 
-
-
 /* ---- 6. SERVER LIST + HOME ICON ---- */
-#app-mount .guilds-1SWlCJ {
+#app-mount .guilds-1SWlCJ {                     /* Server list */
     border: solid;
     border-color:  var(--border-color) rgba(0,0,0,0);
     border-radius: 30px;
     border-width: 3px;
     border-style: double;
-    margin-bottom: 0.5%;
+    margin-bottom: 0.2rem;
 }
 
 svg [name='Nova_Discord'] {                     /* Home icon */
 
     background-image: var(--home-image);  
+    background-size: cover;
     width: 48px ;
     height: 48px ;
-    background-size: cover;
 }
 
 svg [name='Nova_Discord']>path {                /* Remove the discord icon */
@@ -386,8 +384,7 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 }
 
 #app-mount .sidebar-2K8pFh {                    /* Server channel bar */
-    margin-right: 1rem ;
-    margin-left: 1rem ;
+    margin:  0 0.2rem 0.5rem 0.5rem;
 }
 
 
@@ -400,7 +397,7 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 }
 
 #app-mount .card-3DjzTQ:hover {             /* Servers */
-background: var(--inner-color);
+    background: var(--inner-color);
 }
 
 
@@ -408,15 +405,36 @@ background: var(--inner-color);
 
 
 /* ---- 9. MENU BAR ---- */
-#app-mount .typeWindows-1za-n7 {            /* Top bar */
+#app-mount .typeWindows-1za-n7 {                    /* Top bar */
     background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.25));
     margin-top: 0px;
     padding-top: 3px;
     margin-bottom: 0.2rem;
 }
 
+#app-mount .searchBar-3dMhjb {                      /* Search bar */
+    background-color: inherit ;
+}
+
+#app-mount .searchBar-3dMhjb:hover {                /* Search bar */
+    background-color: rgba(0, 0, 0, 0.3) ;
+    transition: 300ms ease;
+}
+
+#app-mount .public-DraftEditorPlaceholder-root {    /* Searchbar text */
+    color:white;
+}
+
 #app-mount .winButtonMinMax-PBQ3gm:hover {          /* Minimize window */
     color: var(--minimize-color);
+}
+
+#app-mount .winButtonMinMax:hover {                 /* Maximize window */
+    color: var(--maximize-color);
+}
+
+#app-mount .winButtonMinMax:hover {                 /* Close window */
+    color: var(--close-color);
 }
 
 
@@ -431,4 +449,16 @@ background: var(--inner-color);
 
 #app-mount .children-19S4PO::after {                /* Remove the annoying bar before the bell */
     content: none ;
+}
+
+
+
+
+
+#app-mount .topSectionNormal-2-vo2m,                        /* Profile details (click on picture) */
+#app-mount .root-SR8cQa,
+#app-mount .body-3ND3kc,
+#app-mount .da-topSectionSpotify,
+#app-mount .topSectionPlaying-1J5E4n  {
+    background-color:rgba(0,0,0,0) ;
 }
