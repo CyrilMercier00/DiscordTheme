@@ -146,75 +146,59 @@ margin-bottom: 0.5rem;
 
 
 /* ---- 5. MEMBER LIST & details ----*/
-    /* Hide sidebar*/
-  .chat-3bRxxu .content-yTz4x3>.flex-1O1GKY:only-child {  /* Collapsed Member List */
-    margin-right: 0px;
+/*Collapsed Member List*/
+.chat-3bRxxu .content-yTz4x3>.flex-1O1GKY:only-child {margin-right:0px !important;}
+
+.searchResultsWrap-2DKFzt {z-index: 200 !important;}
+
+.content-yTz4x3>.flex-1O1GKY {
+  margin-right:-185px !important;
+  z-index:100;
 }
 
-  .searchResultsWrap-2DKFzt {
-    z-index: 200 ;
-}
-
-  .content-yTz4x3>.flex-1O1GKY {      /* Member list position */
-    margin-right: -185px;
-    z-index: 100;
-}
 
 /* Fixes the open space */
 .membersWrap-2h-GB4 {
     margin-right: -186px;
-    z-index: 1;
-    transform: translate(-185px);
+    z-index: 100;
+    transform:translate(-185px);
 }
 
-/* Collapses Member List */
-  .members-1998pB {
-    transform: translate(185px);
-    transition: all 300ms ease;
-    z-index: 1;
+
+/* Collapses Member List and Doesn't Show Anything when not hovering on the member list */
+.members-1998pB {
+    transform:translate(185px);
+    transition:all 300ms ease;
+    z-index:100;
 }
 
-/* Remove member details when not hovering */
-  .members-1998pB .membersGroup-v9BXpm,
-  .content-3QAtGj, 
-  .name-uJV0GL {  
-    opacity: 0;
-    transition:opacity 1s ease;
-}
-
-/* Shows Up on Hover */
-  .members-1998pB:hover .content-3QAtGj,
-  .members-1998pB:hover .name-uJV0GL,
-  .membersWrap-2h-GB4:hover,
-  .membersWrap-2h-GB4:hover {
-    opacity: 1;
-    transform: translate(0px);
-    transition: all 0.5s ease;
-}
-
-  .membersWrap-2h-GB4:hover {  /* Member container opacity */
-    background: rgba(0,0,0,0.5);
-    transition: all 300ms ease;
+.members-1998pB .membersGroup-v9BXpm,
+.content-3QAtGj, 
+.name-uJV0GL {
+  opacity: 0;
+  transition:opacity 300ms ease;
 }
 
 /* So Private Channels don't get effected by the code */
-  .privateChannels-1nO12o .content-3QAtGj, 
-  .privateChannels-1nO12o .name-uJV0GL,
-  .content-98HsJk {
-    opacity: 1;
+.privateChannels-1nO12o .content-3QAtGj, 
+.privateChannels-1nO12o .name-uJV0GL {
+  opacity: 1;
 }
 
+/* Shows Up on Hover */
+.members-1998pB:hover .content-3QAtGj,
+.members-1998pB:hover .name-uJV0GL {opacity: 1;}
 
-  .members-1998pB:hover .membersGroup-v9BXpm {     /* Roles in list */
-    font-size: 12px;
-    text-align:center;
-    margin-bottom: 2px;
-    opacity: 1;
+.members-1998pB:hover .membersGroup-v9BXpm {
+  font-size: 12px;
+  width: 100% !important;
+  text-align:left;
+  opacity: 1;
 }
 
-  .members-1998pB:hover { 
-    transform:translate(0px)
-}
+.members-1998pB:hover {transform:translate(0px)}
+
+/* -- */
 
     /* Bigger profile picture on hover */
    .containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {    /* Resize on hover */
