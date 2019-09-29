@@ -87,7 +87,7 @@
   #app-mount .applicationStore-1pNvnv,        /* Store */
   #app-mount .lfg-3zDSPN,                     /* LFG */
   #app-mount .container-3gCOGc,               /* Friends */
-  #app-mount .scroller-2FKFPG,                /* scroller	*/
+  #app-mount .scroller-2FKFPG,                /* Scroller	*/
   #app-mount .standardSidebarView-3F1I7i,     /* Settings */
   #app-mount .contentRegion-3nDuYy,           /* Settings - my account */
   #app-mount .wrapper-1Rf91z,                 /* Guilds container */
@@ -134,23 +134,15 @@
   content: none ;
 }
 
-.da-chat {                    /* Chat wrapper */
+.da-chat {                              /* Chat wrapper */
   margin-bottom: 0.5rem;
 }
 
-.inner-zqa7da:hover {        /* Message input bar */
+.da-channelTextArea div :hover {        /* Message input bar */
   background: rgba(0, 0, 0, 0.4);
-  transition: all 0.8s ease;
-  overflow: visible;
 }
 
-.da-form {                   /* Message input bar wrapper */
-  background-color:inherit;
-  margin: 0;
-  padding: 2px;
-}
-
-.da-messagesWrapper:hover {     /* Message screen */
+.da-messagesWrapper:hover {             /* Message screen */
   background-color: rgba(0,0,0,0.4);
   transition: 500ms ease;
 }
@@ -164,45 +156,42 @@
 /* -- Hide sidebar --*/
 .content-yTz4x3>.flex-1O1GKY {      /* Member list position */
   margin-right: -185px;
-  z-index: 100;
 }
 
-.membersWrap-2h-GB4 {               /* Fixes the open space */
+/*  Fixes the open space but unable to click left buttons
+.membersWrap-2h-GB4 {               
   margin-right: -186px;
-  z-index: 100;
   transform: translate(-185px);
 }
+*/
 
-.members-1998pB {                   /* Collapses Member List */
+.da-members {                       /* Collapses Member List */
   transform: translate(185px);
   transition: all 300ms ease;
-  z-index: 100;
 }
 
-
-.members-1998pB .membersGroup-v9BXpm,
+.da-members .membersGroup-v9BXpm,
 .content-3QAtGj, 
-.name-uJV0GL {                      /* Remove member details when not hovering */
+.name-uJV0GL {                          /* Remove member details when not hovering */
   opacity: 0;
   transition:opacity 1s ease;
 }
 
-.members-1998pB:hover .content-3QAtGj,
-.members-1998pB:hover .name-uJV0GL,
-.members-1998pB:hover {                   /* Shows Up on Hover */
+.da-members:hover .content-3QAtGj,
+.da-members:hover .name-uJV0GL,
+.da-members:hover {                     /* Shows Up on Hover */
   opacity: 1;
   transform: translate(0px);
-  transition: all 0.5s ease;
+  transition: all 300ms ease;
 }
 
-.membersWrap-2h-GB4:hover {               /* Member container opacity */
-  background: rgba(0,0,0,0.5);
-  transition: all 300ms ease;
+.da-members:hover {                     /* Background of the list */
+  background: rgba(0, 0, 0, 0.5) !important;
 }
 
 .privateChannels-1nO12o .content-3QAtGj, 
 .privateChannels-1nO12o .name-uJV0GL,
-.content-98HsJk {                         /* So Private Channels don't get effected by the code */
+.content-98HsJk {         /* So Private Channels don't get effected by the code */
   opacity: 1;
 }
 
@@ -212,6 +201,9 @@
   margin-bottom: 2px;
   opacity: 1;
 }
+/* ---------- */
+
+
 
 /* Bigger profile picture on hover */
   .containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {    /* Resize on hover */
@@ -219,7 +211,6 @@
   transition: all .7s ease;
   z-index: 1;
 }
-/* ---------- */
 
 
 
