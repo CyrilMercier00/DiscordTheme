@@ -70,31 +70,31 @@
 
 
 /* ---- 2. TRANSPARENCY ---- */
-#app-mount,
-#app-mount .app-19_DXt,                     /* appcontainer*/
-#app-mount .app-2rEoOp,                     /* appinner	*/
-#app-mount .layer-3QrUeG,                   /* layercontainer*/
-#app-mount .container-PNkimc,               /* channels	inner*/
-#app-mount .privateChannels-1nO12o,         /* dmchannels*/
-#app-mount .panels-j1Uci_ > *,              /* account/voiceinner*/
-#app-mount .chat-3bRxxu,                    /* chatcontainer*/
-#app-mount .noChannel-Z1DQK7,               /* nochannel*/
-#app-mount .activityFeed-1C0EmJ,            /* activityfeed */
-#app-mount .gameLibrary-TTDw4Y,             /* library  */
-#app-mount .root-1BQpZw,                    /* giftinventory    */
-#app-mount .applicationStore-1pNvnv,        /* store    */
-#app-mount .lfg-3zDSPN,                     /* LFG */
-#app-mount .container-3gCOGc,               /* Friends */
-#app-mount .scroller-2FKFPG,                /* scroller	*/
-#app-mount .standardSidebarView-3F1I7i,     /* Settings */
-#app-mount .contentRegion-3nDuYy,
-#app-mount .sidebarRegion-VFTUkN,
-#app-mount .wrapper-1Rf91z,                 /* Guilds container */
-#app-mount .inner-zqa7da,                   /* Chat input bar */
-#app-mount .sidebar-2K8pFh,                 /* Channel container */
-#app-mount .panels-j1Uci_,                  /* Bottom status bar */
-#app-mount .container-1r6BKw.themed-ANHk51, /* Channel header, notif, pinned,etc. */
-#app-mount .membersWrap-2h-GB4              /* Members */
+  #app-mount,
+  #app-mount.app-19_DXt,                     /* appcontainer*/
+  #app-mount .app-2rEoOp,                     /* appinner	*/
+  #app-mount .layer-3QrUeG,                   /* layercontainer*/
+  #app-mount .container-PNkimc,               /* channels	inner*/
+  #app-mount .privateChannels-1nO12o,         /* dmchannels*/
+  #app-mount .panels-j1Uci_ > *,              /* account/voiceinner*/
+  #app-mount .chat-3bRxxu,                    /* chatcontainer*/
+  #app-mount .noChannel-Z1DQK7,               /* nochannel*/
+  #app-mount .activityFeed-1C0EmJ,            /* activityfeed */
+  #app-mount .gameLibrary-TTDw4Y,             /* library  */
+  #app-mount .root-1BQpZw,                    /* giftinventory    */
+  #app-mount .applicationStore-1pNvnv,        /* store    */
+  #app-mount .lfg-3zDSPN,                     /* LFG */
+  #app-mount .container-3gCOGc,               /* Friends */
+  #app-mount .scroller-2FKFPG,                /* scroller	*/
+  #app-mount .standardSidebarView-3F1I7i,     /* Settings */
+  #app-mount .contentRegion-3nDuYy,
+  #app-mount .sidebarRegion-VFTUkN,
+  #app-mount .wrapper-1Rf91z,                 /* Guilds container */
+  #app-mount .inner-zqa7da,                   /* Chat input bar */
+  #app-mount .sidebar-2K8pFh,                 /* Channel container */
+  #app-mount .panels-j1Uci_,                  /* Bottom status bar */
+  #app-mount .container-1r6BKw.themed-ANHk51, /* Channel header, notif, pinned,etc. */
+  #app-mount .membersWrap-2h-GB4              /* Members */
 {						
     background: rgba(0, 0, 0, var(--background-transparency));
 }
@@ -120,23 +120,23 @@
 
 
 /* ---- 4. CHAT  ----*/
-#app-mount .da-chat {                   /* Chat wrapper */
+  .da-chat {                   /* Chat wrapper */
 margin-bottom: 0.5rem;
 }
 
-#app-mount .inner-zqa7da:hover {        /* Message input bar */
+  .inner-zqa7da:hover {        /* Message input bar */
     background: rgba(0, 0, 0, 0.4);
     transition: all 0.8s ease;
     overflow: visible;
 }
 
-#app-mount .da-form {                   /* Message input bar wrapper */
+  .da-form {                   /* Message input bar wrapper */
     background-color:inherit;
     margin: 0;
     padding: 2px;
 }
 
-#app-mount .messages-3amgkR:hover {     /* Message screen */
+  .messages-3amgkR:hover {     /* Message screen */
     background-color: rgba(0,0,0,0.4);
     transition: 500ms ease;
     width: 50rem;
@@ -147,95 +147,103 @@ margin-bottom: 0.5rem;
 
 /* ---- 5. MEMBER LIST & details ----*/
     /* Hide sidebar*/
-#app-mount .chat-3bRxxu .content-yTz4x3>.flex-1O1GKY:only-child {  /* Collapsed Member List */
+  .chat-3bRxxu .content-yTz4x3>.flex-1O1GKY:only-child {  /* Collapsed Member List */
     margin-right: 0px;
 }
 
-#app-mount .searchResultsWrap-2DKFzt {
+  .searchResultsWrap-2DKFzt {
     z-index: 200 ;
 }
 
-#app-mount .content-yTz4x3>.flex-1O1GKY {      /* Member list position */
+  .content-yTz4x3>.flex-1O1GKY {      /* Member list position */
     margin-right: -185px;
     z-index: 100;
 }
 
+/* Fixes the open space */
+.membersWrap-2h-GB4 {
+    margin-right: -186px;
+    z-index: 1;
+    transform: translate(-185px);
+}
+
 /* Collapses Member List */
-#app-mount .membersWrap-2h-GB4 {
+  .members-1998pB {
     transform: translate(185px);
-    transition: all 0.5s ease;
+    transition: all 300ms ease;
+    z-index: 1;
 }
 
 /* Remove member details when not hovering */
-#app-mount .members-1998pB .membersGroup-v9BXpm,
-#app-mount .content-3QAtGj, 
-#app-mount .name-uJV0GL {  
+  .members-1998pB .membersGroup-v9BXpm,
+  .content-3QAtGj, 
+  .name-uJV0GL {  
     opacity: 0;
     transition:opacity 1s ease;
 }
 
 /* Shows Up on Hover */
-#app-mount .members-1998pB:hover .content-3QAtGj,
-#app-mount .members-1998pB:hover .name-uJV0GL,
-#app-mount .membersWrap-2h-GB4:hover,
-#app-mount .membersWrap-2h-GB4:hover {
+  .members-1998pB:hover .content-3QAtGj,
+  .members-1998pB:hover .name-uJV0GL,
+  .membersWrap-2h-GB4:hover,
+  .membersWrap-2h-GB4:hover {
     opacity: 1;
     transform: translate(0px);
     transition: all 0.5s ease;
 }
 
-#app-mount .membersWrap-2h-GB4:hover {  /* Member container opacity */
+  .membersWrap-2h-GB4:hover {  /* Member container opacity */
     background: rgba(0,0,0,0.5);
     transition: all 300ms ease;
 }
 
 /* So Private Channels don't get effected by the code */
-#app-mount .privateChannels-1nO12o .content-3QAtGj, 
-#app-mount .privateChannels-1nO12o .name-uJV0GL,
-#app-mount .content-98HsJk {
+  .privateChannels-1nO12o .content-3QAtGj, 
+  .privateChannels-1nO12o .name-uJV0GL,
+  .content-98HsJk {
     opacity: 1;
 }
 
 
-#app-mount .members-1998pB:hover .membersGroup-v9BXpm {     /* Roles in list */
+  .members-1998pB:hover .membersGroup-v9BXpm {     /* Roles in list */
     font-size: 12px;
     text-align:center;
     margin-bottom: 2px;
     opacity: 1;
 }
 
-#app-mount .members-1998pB:hover { 
+  .members-1998pB:hover { 
     transform:translate(0px)
 }
 
     /* Bigger profile picture on hover */
-#app-mount  .containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {    /* Resize on hover */
+   .containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {    /* Resize on hover */
   transform: scale(2);
   transition: all .7s ease;
   z-index: 1;
 }
 
     /* Square profile picture */
-#app-mount .wrapper-3t9DeA * {                              /* Allow changes */
+  .wrapper-3t9DeA * {                              /* Allow changes */
     overflow: visible; mask: none; 
 }
 
-#app-mount .wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Status position in member list */
+  .wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Status position in member list */
     x: 0; 
     y: 0; 
 }
 
-#app-mount .wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Status when profile detail */
+  .wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Status when profile detail */
     width: 80px; 
     height: 80px;
 }
 
-#app-mount .wrapper-3t9DeA .cursorDefault-dsQJ1n rect {     /* Status when profile detail */
+  .wrapper-3t9DeA .cursorDefault-dsQJ1n rect {     /* Status when profile detail */
     x: -49;
     y: -53; 
 }
 
-#app-mount .wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Status position in member list  */
+  .wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Status position in member list  */
     width: 32px; height: 32px; 
     overflow: visible; 
     x: -14.5; 
@@ -243,11 +251,11 @@ margin-bottom: 0.5rem;
 }
 
 
-#app-mount .wrapper-3t9DeA img {    /* Make images square */
+  .wrapper-3t9DeA img {    /* Make images square */
     border-radius: 0%; 
 }
 
-#app-mount .wrapper-3t9DeA[aria-label*="mobile"]:after { /* Mobile icon */
+  .wrapper-3t9DeA[aria-label*="mobile"]:after { /* Mobile icon */
     content: ""; 
     -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDouODggNi4xMiAyMyA3LjUgMjNoOGMxLjM4IDAgMi41LTEuMTIgMi41LTIuNXYtMTdDMTggMi4xMiAxNi44OCAxIDE1LjUgMXptLTQgMjFjLS44MyAwLTEuNS0uNjctMS41LTEuNXMuNjctMS41IDEuNS0xLjUgMS41LjY3IDEuNSAxLjUtLjY3IDEuNS0xLjUgMS41em00LjUtNEg3VjRoOXYxNHoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZvL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPHBhdGggZD0iTTE1LjUgMWgtOEM2LjEyIDEgNSAyLjEyIDUgMy41djE3QzUgMjEnPg=="); 
     -webkit-mask-size: 16px; 
@@ -259,7 +267,7 @@ margin-bottom: 0.5rem;
 }
 
 
-#app-mount .wrapper-3t9DeA rect { /* Limit outline & position in detail tab */
+  .wrapper-3t9DeA rect { /* Limit outline & position in detail tab */
     x: 0; 
     y: 0; 
     width: 100%; 
@@ -269,82 +277,82 @@ margin-bottom: 0.5rem;
 }
 
 /* Online  */
-#app-mount .wrapper-3t9DeA rect[fill="#43b581"], 
-#app-mount .wrapper-3t9DeA rect[fill="rgba(67, 181, 129, 1)"], 
-#app-mount .wrapper-3t9DeA rect[mask*="online"] { 
+  .wrapper-3t9DeA rect[fill="#43b581"], 
+  .wrapper-3t9DeA rect[fill="rgba(67, 181, 129, 1)"], 
+  .wrapper-3t9DeA rect[mask*="online"] { 
     stroke: var(--rs-online-color); 
 }
 
 /* Idle */
-#app-mount .wrapper-3t9DeA rect[fill="#faa61a"],
-#app-mount .wrapper-3t9DeA rect[fill="rgba(250, 166, 26, 1)"], 
-#app-mount .wrapper-3t9DeA rect[mask*="idle"] { 
+  .wrapper-3t9DeA rect[fill="#faa61a"],
+  .wrapper-3t9DeA rect[fill="rgba(250, 166, 26, 1)"], 
+  .wrapper-3t9DeA rect[mask*="idle"] { 
     stroke: var(--rs-idle-color); 
 }
 
 /* Do not disturb */
-#app-mount .wrapper-3t9DeA rect[fill="#f04747"], /* */
-#app-mount .wrapper-3t9DeA rect[fill="rgba(240, 71, 71, 1)"], 
-#app-mount .wrapper-3t9DeA rect[mask*="dnd"] { 
+  .wrapper-3t9DeA rect[fill="#f04747"], /* */
+  .wrapper-3t9DeA rect[fill="rgba(240, 71, 71, 1)"], 
+  .wrapper-3t9DeA rect[mask*="dnd"] { 
     stroke: var(--rs-dnd-color); 
 }
 
 /* Streaming */
-#app-mount .wrapper-3t9DeA rect[fill="#593695"],
-#app-mount .wrapper-3t9DeA rect[mask*="streaming"] { 
+  .wrapper-3t9DeA rect[fill="#593695"],
+  .wrapper-3t9DeA rect[mask*="streaming"] { 
     stroke: var(--rs-streaming-color); 
 }
 
 /* Offline */
-#app-mount .wrapper-3t9DeA rect[fill="#747f8d"], 
-#app-mount .wrapper-3t9DeA rect[mask*="offline"] {
+  .wrapper-3t9DeA rect[fill="#747f8d"], 
+  .wrapper-3t9DeA rect[mask*="offline"] {
     stroke: var(--rs-offline-color); 
 }
 
 /* Invisible */
-#app-mount .wrapper-3t9DeA rect[mask*="invisible"],
-#app-mount .wrapper-3t9DeA rect[fill="rgba(116, 127, 141, 1)"] 
+  .wrapper-3t9DeA rect[mask*="invisible"],
+  .wrapper-3t9DeA rect[fill="rgba(116, 127, 141, 1)"] 
 { 
     stroke: var(--rs-invisible-color); 
 }
 
 /* Proper size chat click */
-#app-mount .wrapper-3t9DeA rect[x="16"] { 
+  .wrapper-3t9DeA rect[x="16"] { 
     width: 24px; height: 24px; 
 }
 
-#app-mount .wrapper-3t9DeA rect[x="28"] { 
+  .wrapper-3t9DeA rect[x="28"] { 
     width: 40px; height: 40px; overflow: visible; 
 }
 
-#app-mount .avatarHint-1qgaV3 foreignObject { 
+  .avatarHint-1qgaV3 foreignObject { 
     mask: none; 
 }
 
-#app-mount .avatarHint-1qgaV3 .avatarHintInner-Dco91E { 
+  .avatarHint-1qgaV3 .avatarHintInner-Dco91E { 
     border-radius: 50% !important; 
 }
 
-#app-mount .message-1PNnaP .mask-1l8v16 img { 
+  .message-1PNnaP .mask-1l8v16 img { 
     clip-path: circle(calc(19px - var(--rs-small-spacing))); 
 }
 
-#app-mount .memberOffline-2lN7gt img { 
+  .memberOffline-2lN7gt img { 
     clip-path: none !important; 
 }
 
-#app-mount .header-QKLPzZ .wrapper-3t9DeA { 
+  .header-QKLPzZ .wrapper-3t9DeA { 
     margin-right: 20px !important; 
 }
 
 
     /*  MEMBER DETAILS  */
-#app-mount .headerPlaying-j0WQBV, 
-#app-mount .headerStreaming-2FjmGz {        /* Color when playing or streaming */
+  .headerPlaying-j0WQBV, 
+  .headerStreaming-2FjmGz {        /* Color when playing or streaming */
     background-color: var(--member-detail-color-playing);
 }
 
-#app-mount .body-3iLsc4 {       /* Role and notes */
+  .body-3iLsc4 {       /* Role and notes */
     background-color: #2f3136;
     color: hsla(0,0%,100%,.8);
 }
@@ -352,7 +360,7 @@ margin-bottom: 0.5rem;
 
 
 /* ---- 6. SERVER LIST + HOME ICON ---- */
-#app-mount .guilds-1SWlCJ {                     /* Server list */
+  .guilds-1SWlCJ {                     /* Server list */
     border: solid;
     border-color:  var(--border-color) rgba(0,0,0,0);
     border-radius: 30px;
@@ -378,12 +386,12 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 
 /* ---- 7. CHANNELS ---- */
-#app-mount .container-PNkimc>div:hover {        /* Inside the channel list wrapper */
+  .container-PNkimc>div:hover {        /* Inside the channel list wrapper */
     background-color: rgba(0,0,0,0.3);
     transition: 300ms ease;
 }
 
-#app-mount .sidebar-2K8pFh {                    /* Server channel bar */
+  .sidebar-2K8pFh {                    /* Server channel bar */
     margin:  0 0.2rem 0.5rem 0.5rem;
 }
 
@@ -392,11 +400,11 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 
 /* ---- 8. FIND COMMUNITIES ---- */
-#app-mount .pageWrapper-1PgVDX {            /* Container */
+  .pageWrapper-1PgVDX {            /* Container */
     background: rgba(0, 0, 0, 0.5);
 }
 
-#app-mount .card-3DjzTQ:hover {             /* Servers */
+  .card-3DjzTQ:hover {             /* Servers */
     background: var(--inner-color);
 }
 
@@ -405,35 +413,34 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 
 /* ---- 9. MENU BAR ---- */
-#app-mount .typeWindows-1za-n7 {                    /* Top bar */
+  .typeWindows-1za-n7 {                    /* Top bar */
     background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.25));
     margin-top: 0px;
     padding-top: 3px;
-    margin-bottom: 0.2rem;
 }
 
-#app-mount .searchBar-3dMhjb {                      /* Search bar */
+  .searchBar-3dMhjb {                      /* Search bar */
     background-color: inherit ;
 }
 
-#app-mount .searchBar-3dMhjb:hover {                /* Search bar */
+  .searchBar-3dMhjb:hover {                /* Search bar */
     background-color: rgba(0, 0, 0, 0.3) ;
     transition: 300ms ease;
 }
 
-#app-mount .public-DraftEditorPlaceholder-root {    /* Searchbar text */
+  .public-DraftEditorPlaceholder-root {    /* Searchbar text */
     color:white;
 }
 
-#app-mount .winButtonMinMax-PBQ3gm:hover {          /* Minimize window */
+  .winButtonMinMax-PBQ3gm:hover {          /* Minimize window */
     color: var(--minimize-color);
 }
 
-#app-mount .winButtonMinMax:hover {                 /* Maximize window */
+  .winButtonMinMax:hover {                 /* Maximize window */
     color: var(--maximize-color);
 }
 
-#app-mount .winButtonMinMax:hover {                 /* Close window */
+  .winButtonMinMax:hover {                 /* Close window */
     color: var(--close-color);
 }
 
@@ -443,11 +450,11 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 /* ---- 10. CHANNEL HEADER BAR ---- */
 
-#app-mount .container-1r6BKw.themed-ANHk51 {        /* Channel header bar */
+  .container-1r6BKw.themed-ANHk51 {        /* Channel header bar */
     background-color:rgba(0, 0, 0, 0.10);
 }
 
-#app-mount .children-19S4PO::after {                /* Remove the annoying bar before the bell */
+  .children-19S4PO::after {                /* Remove the annoying bar before the bell */
     content: none ;
 }
 
@@ -455,10 +462,10 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 
 
-#app-mount .topSectionNormal-2-vo2m,                        /* Profile details (click on picture) */
-#app-mount .root-SR8cQa,
-#app-mount .body-3ND3kc,
-#app-mount .da-topSectionSpotify,
-#app-mount .topSectionPlaying-1J5E4n  {
+  .topSectionNormal-2-vo2m,                        /* Profile details (click on picture) */
+  .root-SR8cQa,
+  .body-3ND3kc,
+  .da-topSectionSpotify,
+  .topSectionPlaying-1J5E4n  {
     background-color:rgba(0,0,0,0) ;
 }
