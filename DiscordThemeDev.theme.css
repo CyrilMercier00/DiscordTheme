@@ -27,42 +27,45 @@
 @import url(fonts.googleapis.com/css?family=Zilla+Slab:500) ;
 
 :root {
-                                                                        /* https://i.imgur.com/N8xMPkW.jpg - Rain */
+  /*      
+  Default discord colors :
+  - Discord white: rgb(220, 221, 222)
+  - Discord light gray: rgb(54, 57, 62)
+  - Discord dark gray: rgb(49, 50, 55)
+  - Discord black: rgb(38, 37, 42)
+  */
 
-    --background-image-url: url("https://i.imgur.com/N8xMPkW.jpg") ;    /* Background image. Make sure it point to the image itself and not the page hosting the image. */
-    --background-transparency: 0.05 ;                                   /* Overall transparency */
-
-    --font-size : 16px ;                                                /* Default 16px */
-
-    --home-image: url("https://i.imgur.com/vJ6EO68.jpg") ;              /* Home picture (top left) */
+  --background-image-url: url("https://i.imgur.com/N8xMPkW.jpg") ;    /* Background image. Make sure it point to the image itself and not the page hosting the image. */
+  --home-image: url("https://i.imgur.com/vJ6EO68.jpg") ;              /* Home picture (top left) */
     
+  --font-size : 16px ;                                                /* Default 16px */
     
-    /* [ Member status ] */
-    --rs-width: 2px;                                                      /* Width/thickness of status border */
-    --rs-online-color: #43b581;                                         /* Color for online status */
-    --rs-idle-color: #faa61a;                                           /* Color for idle status */
-    --rs-dnd-color: #f04747;                                            /* Color for do not disturb status */
-    --rs-offline-color: #636b75;                                        /* Color for offline status */
-    --rs-invisible-color: #8B4513;                                      /* Color for invisible status - Note this will only show for your own invisibility */
-    --rs-streaming-color: #643da7;                                      /* Color for streaming status */
+  /* [ Member status ] */
+  --rs-width: 2px;                                                    /* Width / thickness of status border */
+  --rs-online-color: #43b581;                                       /* Color for online status */
+  --rs-idle-color: #faa61a;                                         /* Color for idle status */
+  --rs-dnd-color: #f04747;                                          /* Color for do not disturb status */
+  --rs-offline-color: #636b75;                                      /* Color for offline status */
+  --rs-invisible-color: #8B4513;                                    /* Color for invisible status - Note this will only show for your own invisibility */
+  --rs-streaming-color: #643da7;                                    /* Color for streaming status */
     
-    --member-detail-color-playing: rgba(164, 189, 252, 1);              /* Color when someone is in game*/
+  --member-detail-color-playing: rgba(164, 189, 252, 1);            /* Color when someone is in game*/
     
-    /* [ Server list ] */
-    --border-color: rgba(164, 189, 252, 0.35) ;                         /* Color of the top an bottom borders*/
+  /* [ Server list ] */
+  --border-color: rgba(164, 189, 252, 0.35) ;                       /* Color of the top an bottom borders*/
 
-    /* [ Server Discovery ] */
-    --inner-color : rgba(164, 189, 252, 0.35);                          /* Color when hovering over a server - Default is (35,39,42,1) */
+  /* [ Server Discovery ] */
+  --inner-color : rgba(164, 189, 252, 0.35);                        /* Color when hovering over a server - Default is (35,39,42,1) */
 
-    /* [ Menu bar (the bar at the top) ] */
-    --minimize-color: rgba(255, 255, 255,1);                            /* Color of the minimize button */
-    --maximize-color: rgba(255, 255, 255, 1);                           /* Color of the maximize button */
-    --close-color: rgba(255,255,255,1);                                 /* Color of the close window button */
+  /* [ Menu bar (the bar at the top) ] */
+  --minimize-color: rgba(255, 255, 255,1);                          /* Color of the minimize button */
+  --maximize-color: rgba(255, 255, 255, 1);                         /* Color of the maximize button */
+  --close-color: rgba(255,255,255,1);                               /* Color of the close window button */
 }
 
 #app-mount {
-    font-family: 'Zilla Slab', serif ;
-    font-size: var(--font-size);         
+  font-family: 'Zilla Slab', serif ;
+  font-size: var(--font-size);         
 }
 
 
@@ -71,38 +74,42 @@
 
 /* ---- 2. TRANSPARENCY ---- */
   #app-mount,
-  #app-mount.app-19_DXt,                     /* appcontainer*/
-  #app-mount .app-2rEoOp,                     /* appinner	*/
-  #app-mount .layer-3QrUeG,                   /* layercontainer*/
-  #app-mount .container-PNkimc,               /* channels	inner*/
-  #app-mount .privateChannels-1nO12o,         /* dmchannels*/
-  #app-mount .panels-j1Uci_ > *,              /* account/voiceinner*/
-  #app-mount .chat-3bRxxu,                    /* chatcontainer*/
-  #app-mount .noChannel-Z1DQK7,               /* nochannel*/
-  #app-mount .activityFeed-1C0EmJ,            /* activityfeed */
-  #app-mount .gameLibrary-TTDw4Y,             /* library  */
-  #app-mount .root-1BQpZw,                    /* giftinventory    */
-  #app-mount .applicationStore-1pNvnv,        /* store    */
+  #app-mount .app-2rEoOp,                     /* app inner	*/
+  #app-mount .layer-3QrUeG,                   /* layer container*/
+  #app-mount .container-PNkimc,               /* Channels	inner*/
+  #app-mount .privateChannels-1nO12o,         /* dm channels*/
+  #app-mount .panels-j1Uci_ > *,              /* account / voice inner*/
+  #app-mount .chat-3bRxxu,                    /* chat container*/
+  #app-mount .noChannel-Z1DQK7,               /* No channel*/
+  #app-mount .activityFeed-1C0EmJ,            /* Activity feed */
+  #app-mount .gameLibrary-TTDw4Y,             /* Library  */
+  #app-mount .root-1BQpZw,                    /* Gift inventory */
+  #app-mount .applicationStore-1pNvnv,        /* Store */
   #app-mount .lfg-3zDSPN,                     /* LFG */
   #app-mount .container-3gCOGc,               /* Friends */
   #app-mount .scroller-2FKFPG,                /* scroller	*/
   #app-mount .standardSidebarView-3F1I7i,     /* Settings */
-  #app-mount .contentRegion-3nDuYy,
-  #app-mount .sidebarRegion-VFTUkN,
+  #app-mount .contentRegion-3nDuYy,           /* Settings - my account */
   #app-mount .wrapper-1Rf91z,                 /* Guilds container */
   #app-mount .inner-zqa7da,                   /* Chat input bar */
   #app-mount .sidebar-2K8pFh,                 /* Channel container */
   #app-mount .panels-j1Uci_,                  /* Bottom status bar */
   #app-mount .container-1r6BKw.themed-ANHk51, /* Channel header, notif, pinned,etc. */
-  #app-mount .membersWrap-2h-GB4              /* Members */
-{						
-    background: rgba(0, 0, 0, var(--background-transparency));
+  #app-mount .membersWrap-2h-GB4,             /* Members */
+  
+  #app-mount .topSectionNormal-2-vo2m,        /* Profile details (when clicking on picture) */                           
+  #app-mount .root-SR8cQa,
+  #app-mount .body-3ND3kc,
+  #app-mount .da-topSectionSpotify,
+  #app-mount .topSectionPlaying-1J5E4n {						
+    background: rgba(0, 0, 0, 0.05);
 }
 
-/* Remove scrollbar */
-.firefoxFixScrollFlex-cnI2ix::-webkit-scrollbar {
+
+.firefoxFixScrollFlex-cnI2ix::-webkit-scrollbar {   /* Remove scrollbar */
     display: none;
 }
+
 
 
 
@@ -110,7 +117,6 @@
 /* ---- 3. BACKGROUND ---- */
 #app-mount {
     background-image: var(--background-image-url) ;
-    /* background-color: #8B8878; */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -120,249 +126,228 @@
 
 
 /* ---- 4. CHAT  ----*/
-  .da-chat {                   /* Chat wrapper */
-margin-bottom: 0.5rem;
+.container-1r6BKw.themed-ANHk51 {        /* Channel header bar */
+  background-color:rgba(0, 0, 0, 0.10);
 }
 
-  .inner-zqa7da:hover {        /* Message input bar */
-    background: rgba(0, 0, 0, 0.4);
-    transition: all 0.8s ease;
-    overflow: visible;
+.children-19S4PO::after {                /* Remove the annoying bar before the bell */
+  content: none ;
 }
 
-  .da-form {                   /* Message input bar wrapper */
-    background-color:inherit;
-    margin: 0;
-    padding: 2px;
+.da-chat {                    /* Chat wrapper */
+  margin-bottom: 0.5rem;
 }
 
-  .messages-3amgkR:hover {     /* Message screen */
-    background-color: rgba(0,0,0,0.4);
-    transition: 500ms ease;
-    width: 50rem;
+.inner-zqa7da:hover {        /* Message input bar */
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.8s ease;
+  overflow: visible;
 }
 
+.da-form {                   /* Message input bar wrapper */
+  background-color:inherit;
+  margin: 0;
+  padding: 2px;
+}
 
-
-
-/* ---- 5. MEMBER LIST & details ----*/
-/*Collapsed Member List*/
-.chat-3bRxxu .content-yTz4x3>.flex-1O1GKY:only-child {margin-right:0px !important;}
-
-.searchResultsWrap-2DKFzt {z-index: 200 !important;}
-
-.content-yTz4x3>.flex-1O1GKY {
-  margin-right:-185px !important;
-  z-index:100;
+.messages-3amgkR:hover {     /* Message screen */
+  background-color: rgba(0,0,0,0.4);
+  transition: 500ms ease;
+  width: 50rem;
 }
 
 
-/* Fixes the open space */
-.membersWrap-2h-GB4 {
-    margin-right: -186px;
-    z-index: 100;
-    transform:translate(-185px);
-}
 
 
-/* Collapses Member List and Doesn't Show Anything when not hovering on the member list */
-.members-1998pB {
-    transform:translate(185px);
-    transition:all 300ms ease;
-    z-index:100;
+
+/* ---- 5. MEMBER LIST ----*/
+
+/* -- Hide sidebar --*/
+.content-yTz4x3>.flex-1O1GKY {      /* Member list position */
+  margin-right: -185px;
+  z-index: 100;
 }
+
+.membersWrap-2h-GB4 {               /* Fixes the open space */
+  margin-right: -186px;
+  z-index: 100;
+  transform: translate(-185px);
+}
+
+.members-1998pB {                   /* Collapses Member List */
+  transform: translate(185px);
+  transition: all 300ms ease;
+  z-index: 100;
+}
+
 
 .members-1998pB .membersGroup-v9BXpm,
 .content-3QAtGj, 
-.name-uJV0GL {
+.name-uJV0GL {                      /* Remove member details when not hovering */
   opacity: 0;
-  transition:opacity 300ms ease;
+  transition:opacity 1s ease;
 }
 
-/* So Private Channels don't get effected by the code */
-.privateChannels-1nO12o .content-3QAtGj, 
-.privateChannels-1nO12o .name-uJV0GL {
-  opacity: 1;
-}
-
-/* Shows Up on Hover */
 .members-1998pB:hover .content-3QAtGj,
-.members-1998pB:hover .name-uJV0GL {opacity: 1;}
+.members-1998pB:hover .name-uJV0GL,
+.members-1998pB:hover {                   /* Shows Up on Hover */
+  opacity: 1;
+  transform: translate(0px);
+  transition: all 0.5s ease;
+}
 
-.members-1998pB:hover .membersGroup-v9BXpm {
-  font-size: 12px;
-  width: 100% !important;
-  text-align:left;
+.membersWrap-2h-GB4:hover {               /* Member container opacity */
+  background: rgba(0,0,0,0.5);
+  transition: all 300ms ease;
+}
+
+.privateChannels-1nO12o .content-3QAtGj, 
+.privateChannels-1nO12o .name-uJV0GL,
+.content-98HsJk {                         /* So Private Channels don't get effected by the code */
   opacity: 1;
 }
 
-.members-1998pB:hover {transform:translate(0px)}
+.members-1998pB:hover .membersGroup-v9BXpm {              /* Roles categories in list */
+  font-size: 12px;
+  text-align:center;
+  margin-bottom: 2px;
+  opacity: 1;
+}
 
-/* -- */
-
-    /* Bigger profile picture on hover */
-   .containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {    /* Resize on hover */
+/* Bigger profile picture on hover */
+  .containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {    /* Resize on hover */
   transform: scale(2);
   transition: all .7s ease;
   z-index: 1;
 }
+/* ---------- */
 
-    /* Square profile picture */
-  .wrapper-3t9DeA * {                              /* Allow changes */
-    overflow: visible; mask: none; 
+
+
+/* -- Square profile picture --*/
+
+.wrapper-3t9DeA * {                              /* Allow changes */
+  mask: none; 
 }
 
-  .wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Status position in member list */
-    x: 0; 
-    y: 0; 
+.wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Status position in member list */
+  x: 0; 
+  y: 0; 
 }
 
-  .wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Status when profile detail */
-    width: 80px; 
-    height: 80px;
+.wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Status when profile detail */
+  width: 80px; 
+  height: 80px;
 }
 
-  .wrapper-3t9DeA .cursorDefault-dsQJ1n rect {     /* Status when profile detail */
-    x: -49;
-    y: -53; 
+.wrapper-3t9DeA .cursorDefault-dsQJ1n rect {     /* Status when profile detail */
+  x: -49;
+  y: -53; 
 }
 
-  .wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Status position in member list  */
-    width: 32px; height: 32px; 
-    overflow: visible; 
-    x: -14.5; 
-    y: -17; 
-}
-
-
-  .wrapper-3t9DeA img {    /* Make images square */
-    border-radius: 0%; 
-}
-
-  .wrapper-3t9DeA[aria-label*="mobile"]:after { /* Mobile icon */
-    content: ""; 
-    -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDouODggNi4xMiAyMyA3LjUgMjNoOGMxLjM4IDAgMi41LTEuMTIgMi41LTIuNXYtMTdDMTggMi4xMiAxNi44OCAxIDE1LjUgMXptLTQgMjFjLS44MyAwLTEuNS0uNjctMS41LTEuNXMuNjctMS41IDEuNS0xLjUgMS41LjY3IDEuNSAxLjUtLjY3IDEuNS0xLjUgMS41em00LjUtNEg3VjRoOXYxNHoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZvL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPHBhdGggZD0iTTE1LjUgMWgtOEM2LjEyIDEgNSAyLjEyIDUgMy41djE3QzUgMjEnPg=="); 
-    -webkit-mask-size: 16px; 
-    -webkit-mask-repeat: no-repeat; 
-    -webkit-mask-position: center; display: block; position: absolute; 
-    width: 12px; height: 16px; top: 50%; 
-    transform: translateY(-50%); right: -171px; 
-    background: var(--rs-online-color); z-index: 1; 
+.wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Status position in member list  */
+  width: 32px; height: 32px; 
+  overflow: visible; 
+  x: -14.5; 
+  y: -17; 
 }
 
 
-  .wrapper-3t9DeA rect { /* Limit outline & position in detail tab */
-    x: 0; 
-    y: 0; 
-    width: 100%; 
-    height: 100%; 
-    fill: transparent; 
-    stroke-width: var(--rs-width); 
+.wrapper-3t9DeA img {    /* Make images square */
+  border-radius: 0%; 
+}
+
+.wrapper-3t9DeA rect { /* Limit outline & position in detail tab */
+  x: 0; 
+  y: 0; 
+  width: 100%; 
+  height: 100%; 
+  fill: transparent; 
+  stroke-width: var(--rs-width); 
 }
 
 /* Online  */
-  .wrapper-3t9DeA rect[fill="#43b581"], 
-  .wrapper-3t9DeA rect[fill="rgba(67, 181, 129, 1)"], 
-  .wrapper-3t9DeA rect[mask*="online"] { 
-    stroke: var(--rs-online-color); 
+.wrapper-3t9DeA rect[fill="#43b581"], 
+.wrapper-3t9DeA rect[fill="rgba(67, 181, 129, 1)"], 
+.wrapper-3t9DeA rect[mask*="online"] { 
+  stroke: var(--rs-online-color); 
 }
 
 /* Idle */
-  .wrapper-3t9DeA rect[fill="#faa61a"],
-  .wrapper-3t9DeA rect[fill="rgba(250, 166, 26, 1)"], 
-  .wrapper-3t9DeA rect[mask*="idle"] { 
-    stroke: var(--rs-idle-color); 
+.wrapper-3t9DeA rect[fill="#faa61a"],
+.wrapper-3t9DeA rect[fill="rgba(250, 166, 26, 1)"], 
+.wrapper-3t9DeA rect[mask*="idle"] { 
+  stroke: var(--rs-idle-color); 
 }
 
 /* Do not disturb */
-  .wrapper-3t9DeA rect[fill="#f04747"], /* */
-  .wrapper-3t9DeA rect[fill="rgba(240, 71, 71, 1)"], 
-  .wrapper-3t9DeA rect[mask*="dnd"] { 
-    stroke: var(--rs-dnd-color); 
+.wrapper-3t9DeA rect[fill="#f04747"], /* */
+.wrapper-3t9DeA rect[fill="rgba(240, 71, 71, 1)"], 
+.wrapper-3t9DeA rect[mask*="dnd"] { 
+  stroke: var(--rs-dnd-color); 
 }
 
 /* Streaming */
-  .wrapper-3t9DeA rect[fill="#593695"],
-  .wrapper-3t9DeA rect[mask*="streaming"] { 
-    stroke: var(--rs-streaming-color); 
+.wrapper-3t9DeA rect[fill="#593695"],
+.wrapper-3t9DeA rect[mask*="streaming"] { 
+  stroke: var(--rs-streaming-color); 
 }
 
 /* Offline */
-  .wrapper-3t9DeA rect[fill="#747f8d"], 
-  .wrapper-3t9DeA rect[mask*="offline"] {
-    stroke: var(--rs-offline-color); 
+.wrapper-3t9DeA rect[fill="#747f8d"], 
+.wrapper-3t9DeA rect[mask*="offline"] {
+  stroke: var(--rs-offline-color); 
 }
 
 /* Invisible */
-  .wrapper-3t9DeA rect[mask*="invisible"],
-  .wrapper-3t9DeA rect[fill="rgba(116, 127, 141, 1)"] 
-{ 
-    stroke: var(--rs-invisible-color); 
+.wrapper-3t9DeA rect[mask*="invisible"],
+.wrapper-3t9DeA rect[fill="rgba(116, 127, 141, 1)"] { 
+  stroke: var(--rs-invisible-color); 
 }
-
-/* Proper size chat click */
-  .wrapper-3t9DeA rect[x="16"] { 
-    width: 24px; height: 24px; 
-}
-
-  .wrapper-3t9DeA rect[x="28"] { 
-    width: 40px; height: 40px; overflow: visible; 
-}
-
-  .avatarHint-1qgaV3 foreignObject { 
-    mask: none; 
-}
-
-  .avatarHint-1qgaV3 .avatarHintInner-Dco91E { 
-    border-radius: 50% !important; 
-}
-
-  .message-1PNnaP .mask-1l8v16 img { 
-    clip-path: circle(calc(19px - var(--rs-small-spacing))); 
-}
-
-  .memberOffline-2lN7gt img { 
-    clip-path: none !important; 
-}
-
-  .header-QKLPzZ .wrapper-3t9DeA { 
-    margin-right: 20px !important; 
-}
+/* ---------- */
 
 
-    /*  MEMBER DETAILS  */
-  .headerPlaying-j0WQBV, 
-  .headerStreaming-2FjmGz {        /* Color when playing or streaming */
-    background-color: var(--member-detail-color-playing);
+
+/*  MEMBER DETAILS  */
+.headerPlaying-j0WQBV, 
+.headerStreaming-2FjmGz {           /* Color when playing or streaming */
+  background-color: var(--member-detail-color-playing);
 }
 
-  .body-3iLsc4 {       /* Role and notes */
-    background-color: #2f3136;
-    color: hsla(0,0%,100%,.8);
+.body-3iLsc4 {                      /* Role and notes */
+  background-color: #2f3136;
+  color: hsla(0,0%,100%,.8);
 }
+
+.da-avatarHint>* {                  /* Make the view profile square */
+  mask: none; 
+}
+/* ---------- */
+
+
 
 
 
 /* ---- 6. SERVER LIST + HOME ICON ---- */
-  .guilds-1SWlCJ {                     /* Server list */
-    border: solid;
-    border-color:  var(--border-color) rgba(0,0,0,0);
-    border-radius: 30px;
-    border-width: 3px;
-    border-style: double;
-    margin-bottom: 0.2rem;
+  .guilds-1SWlCJ {                              /* Server list */
+  border: solid;
+  border-color:  var(--border-color) rgba(0,0,0,0);
+  border-radius: 30px;
+  border-width: 3px;
+  border-style: double;
+  margin-bottom: 0.2rem;
 }
 
 svg [name='Nova_Discord'] {                     /* Home icon */
 
-    background-image: var(--home-image);  
-    background-size: cover;
-    width: 48px ;
-    height: 48px ;
+  background-image: var(--home-image);  
+  background-size: cover;
+  width: 48px ;
+  height: 48px ;
 }
 
 svg [name='Nova_Discord']>path {                /* Remove the discord icon */
-    display: none ;
+  display: none ;
 }
 
 
@@ -370,13 +355,13 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 
 /* ---- 7. CHANNELS ---- */
-  .container-PNkimc>div:hover {        /* Inside the channel list wrapper */
-    background-color: rgba(0,0,0,0.3);
-    transition: 300ms ease;
+.container-PNkimc>div:hover {        /* Inside the channel list wrapper */
+  background-color: rgba(0,0,0,0.3);
+  transition: 300ms ease;
 }
 
-  .sidebar-2K8pFh {                    /* Server channel bar */
-    margin:  0 0.2rem 0.5rem 0.5rem;
+.sidebar-2K8pFh {                    /* Server channel bar */
+  margin:  0 0.2rem 0.5rem 0.5rem;
 }
 
 
@@ -384,12 +369,12 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 
 /* ---- 8. FIND COMMUNITIES ---- */
-  .pageWrapper-1PgVDX {            /* Container */
-    background: rgba(0, 0, 0, 0.5);
+.pageWrapper-1PgVDX {            /* Container */
+  background: rgba(0, 0, 0, 0.5);
 }
 
-  .card-3DjzTQ:hover {             /* Servers */
-    background: var(--inner-color);
+.card-3DjzTQ:hover {             /* Servers */
+  background: var(--inner-color);
 }
 
 
@@ -397,59 +382,91 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 
 /* ---- 9. MENU BAR ---- */
-  .typeWindows-1za-n7 {                    /* Top bar */
-    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.25));
-    margin-top: 0px;
-    padding-top: 3px;
+.typeWindows-1za-n7 {                    /* Top bar */
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.25));
+  margin-top: 0px;
+  padding-top: 3px;
 }
 
-  .searchBar-3dMhjb {                      /* Search bar */
-    background-color: inherit ;
+.searchBar-3dMhjb {                      /* Search bar */
+  background-color: inherit ;
 }
 
-  .searchBar-3dMhjb:hover {                /* Search bar */
-    background-color: rgba(0, 0, 0, 0.3) ;
-    transition: 300ms ease;
+.searchBar-3dMhjb:hover {                /* Search bar hover */
+  background-color: rgba(0, 0, 0, 0.3) ;
+  transition: 300ms ease;
 }
 
-  .public-DraftEditorPlaceholder-root {    /* Searchbar text */
-    color:white;
+.public-DraftEditorPlaceholder-inner {    /* Searchbar text */
+  color: rgb(220, 221, 222);
+  opacity: 1  ;
 }
 
-  .winButtonMinMax-PBQ3gm:hover {          /* Minimize window */
-    color: var(--minimize-color);
+.winButtonMinMax-PBQ3gm:hover {          /* Minimize window */
+  color: var(--minimize-color);
 }
 
-  .winButtonMinMax:hover {                 /* Maximize window */
-    color: var(--maximize-color);
+.winButtonMinMax:hover {                 /* Maximize window */
+  color: var(--maximize-color);
 }
 
-  .winButtonMinMax:hover {                 /* Close window */
-    color: var(--close-color);
-}
-
-
-
-
-
-/* ---- 10. CHANNEL HEADER BAR ---- */
-
-  .container-1r6BKw.themed-ANHk51 {        /* Channel header bar */
-    background-color:rgba(0, 0, 0, 0.10);
-}
-
-  .children-19S4PO::after {                /* Remove the annoying bar before the bell */
-    content: none ;
+.winButtonMinMax:hover {                 /* Close window */
+  color: var(--close-color);
 }
 
 
 
 
 
-  .topSectionNormal-2-vo2m,                        /* Profile details (click on picture) */
-  .root-SR8cQa,
-  .body-3ND3kc,
-  .da-topSectionSpotify,
-  .topSectionPlaying-1J5E4n  {
-    background-color:rgba(0,0,0,0) ;
+/* ---- 10. MESSAGE AND MEMBER SEARCH ---- */
+.theme-dark .searchResultsWrap-2DKFzt {         /* Message and Member search*/
+  z-index: 200 ;
+  background-color: inherit;
+  border-radius: 10px;
+  border-left: solid rgba(0, 0, 0, 0.4) 1px;
+}
+
+.theme-dark  .da-searchHeader {                 /* Header. Total result, recent, pertinent container */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 1 ;
+}
+
+.theme-dark .da-tab,
+.theme-dark .da-totalResults {                  /* Total result, recent, pertinent */
+  opacity: 0.8;
+}
+
+.theme-dark .channelSeparator-1X1FuH .channelName-1QajIf {  /* Channel name*/
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.theme-dark .searchResult-3pzFAB .hit-NLlWXA,
+.theme-dark .searchResult-3pzFAB,
+.theme-dark .searchResultMessage-2VxO12 .hit-NLlWXA,
+.theme-dark .searchResult-3pzFAB.expanded-v2Szsz .searchResultMessage-2VxO12.hit-NLlWXA {       /* Selected message */
+  background-color: rgba(0, 0, 0, 0.4) ;
+  box-shadow: none ;
+  border-radius: 10px;
+}
+
+.theme-dark .searchResultMessage-2VxO12 {       /* Center message */
+ margin: 0px 0px 5px 0px;
+}
+
+.theme-dark .searchResult-3pzFAB:before,
+.theme-dark .searchResult-3pzFAB:after {        /* Fade at the top and bottom of a result */
+  background-image: none;
+}
+
+/* Mobile icon
+.wrapper-3t9DeA[aria-label*="mobile"]:after { 
+  content: ""; 
+  -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDouODggNi4xMiAyMyA3LjUgMjNoOGMxLjM4IDAgMi41LTEuMTIgMi41LTIuNXYtMTdDMTggMi4xMiAxNi44OCAxIDE1LjUgMXptLTQgMjFjLS44MyAwLTEuNS0uNjctMS41LTEuNXMuNjctMS41IDEuNS0xLjUgMS41LjY3IDEuNSAxLjUtLjY3IDEuNS0xLjUgMS41em00LjUtNEg3VjRoOXYxNHoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZvL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPHBhdGggZD0iTTE1LjUgMWgtOEM2LjEyIDEgNSAyLjEyIDUgMy41djE3QzUgMjEnPg=="); 
+  -webkit-mask-size: 16px; 
+  -webkit-mask-repeat: no-repeat; 
+  -webkit-mask-position: center; display: block; position: absolute; 
+  width: 12px; height: 16px; top: 50%; 
+  transform: translateY(-50%); right: -171px; 
+  background: var(--rs-online-color); z-index: 1; 
 }
