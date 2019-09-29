@@ -12,14 +12,14 @@
 2. Transparency
 3. Background
 4. Chat 
-5. Member list & details
-    -108: Hide sidebar
-    -161: Square profile picture
-6. Server list + home icon
-7. Channels list
+5. Member list
+    -165: Hide sidebar
+    -227: Square profile picture
+    -311: Member details
+6. Channels list
 8. Find Communities
 9. Menu bar
-10. Channel header bar
+10.Message and members search
 ------------------------------------------------------------------*/
 
 
@@ -150,10 +150,9 @@
   padding: 2px;
 }
 
-.messages-3amgkR:hover {     /* Message screen */
+.da-messagesWrapper:hover {     /* Message screen */
   background-color: rgba(0,0,0,0.4);
   transition: 500ms ease;
-  width: 50rem;
 }
 
 
