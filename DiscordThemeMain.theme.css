@@ -1,29 +1,27 @@
-/**
- * @name Incroyable du cul
- * @author equilix
- * @version 1.0.0
- * @description Mon theme
-*/
-
 /*------------------------------------------------------------------
 [Table of contents]
 
 1. Font
 2. Transparency
 3. Background
-4. Chat 
-5. Member list & details
-    -108: Hide sidebar
-    -161: Square profile picture
-6. Server list
-7. Channels list
+4. Chat
+5. Member list
+    -165: Hide sidebar
+    -250: Square profile picture
+    -334: Member details
+6. Channels list
+8. Find Communities
+9. Menu bar
+10. Message and members search
 ------------------------------------------------------------------*/
 
 
 /* ---- 1. FONT ---- */
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+
 #app-mount {
-    font-family: 'Zilla Slab', serif ;
-    font-size: var(--font-size);             
+  font-family: 'Dosis', sans-serif;
+  font-size: var(--font-size);
 }
 
 
@@ -31,49 +29,59 @@
 
 
 /* ---- 2. TRANSPARENCY ---- */
-#app-mount,
-#app-mount .app-19_DXt,                     /* appcontainer*/
-#app-mount .app-2rEoOp,                     /* appinner	*/
-#app-mount .layer-3QrUeG,                   /* layercontainer*/
-#app-mount .container-PNkimc,               /* channels	inner*/
-#app-mount .privateChannels-1nO12o,         /* dmchannels*/
-#app-mount .panels-j1Uci_ > *,              /* account/voiceinner*/
-#app-mount .chat-3bRxxu,                    /* chatcontainer*/
-#app-mount .noChannel-Z1DQK7,               /* nochannel*/
-#app-mount .activityFeed-1C0EmJ,            /* activityfeed */
-#app-mount .gameLibrary-TTDw4Y,             /* library  */
-#app-mount .root-1BQpZw,                    /* giftinventory    */
-#app-mount .applicationStore-1pNvnv,        /* store    */
-#app-mount .lfg-3zDSPN,                     /* LFG */
-#app-mount .container-3gCOGc,               /* friends */
-#app-mount .pageWrapper-1PgVDX,             /* guilddiscovery */
-#app-mount .scroller-2FKFPG,                /* scroller	*/
-#app-mount .standardSidebarView-3F1I7i,     /* settings */
-#app-mount .contentRegion-3nDuYy,
-#app-mount .sidebarRegion-VFTUkN,
-#app-mount .wrapper-1Rf91z,                 /* Guilds container */
-#app-mount .inner-zqa7da,                   /* Chat input bar */
-#app-mount .sidebar-2K8pFh,                 /* Channel container */
-#app-mount .panels-j1Uci_,                  /* Bottom status bar */
-#app-mount .container-1r6BKw.themed-ANHk51, /* Channel header, notif, pinned,etc. */
-#app-mount .membersWrap-2h-GB4              /* Members */
-{						
-    background: rgba(0, 0, 0, var(--background-transparency));
+  #app-mount,
+  #app-mount .app-2rEoOp,                     /* app inner	*/
+  #app-mount .layer-3QrUeG,                   /* layer container*/
+  #app-mount .container-PNkimc,               /* Channels	inner*/
+  #app-mount .activityFeed-1C0EmJ,            /* Activity feed */
+  #app-mount .privateChannels-1nO12o,         /* dm channels*/
+  #app-mount .noChannel-Z1DQK7,               /* No channel*/
+  #app-mount .gameLibrary-TTDw4Y,             /* Library  */
+  #app-mount .root-1BQpZw,                    /* Gift inventory */
+  #app-mount .applicationStore-1pNvnv,        /* Store */
+  #app-mount .lfg-3zDSPN,                     /* LFG */
+  #app-mount .chat-3bRxxu,                    /* chat container*/
+  #app-mount .container-3gCOGc,               /* Friends */
+  #app-mount .scroller-2FKFPG,                /* Scroller	*/
+  #app-mount .standardSidebarView-3F1I7i,     /* Settings */
+  #app-mount .contentRegion-3nDuYy,           /* Settings - my account */
+  #app-mount .inner-zqa7da,                   /* Chat input bar */
+  #app-mount .sidebar-2K8pFh,                 /* Channel container */
+  #app-mount .panels-j1Uci_,                  /* Bottom status bar */
+  #app-mount .container-1r6BKw.themed-ANHk51, /* Channel header, notif, pinned,etc. */
+  #app-mount .membersWrap-2h-GB4,             /* Members */
+  #app-mount .bg-h5JY_x,                      /* Background color */
+  #app-mount .topSectionNormal-2-vo2m,        /* Profile details (when clicking on picture) */
+  #app-mount .root-SR8cQa,
+  #app-mount .body-3ND3kc,
+  #app-mount .da-topSectionSpotify,
+  #app-mount .topSectionPlaying-1J5E4n {
+    background: rgba(0, 0, 0, 0.03);
 }
 
-/* Remove scrollbar */
-.firefoxFixScrollFlex-cnI2ix::-webkit-scrollbar {
+
+.firefoxFixScrollFlex-cnI2ix::-webkit-scrollbar {   /* Remove scrollbar */
     display: none;
 }
 
 
 
 
+
 /* ---- 3. BACKGROUND ---- */
-#app-mount {
+#app-mount:before {
     background-image: var(--background-image-url) ;
     background-size: cover;
     background-repeat: no-repeat;
+
+    width: 100%;
+    height: 100%;
+
+    content: "";
+    position: fixed;
+    z-index: -1;
+
+    filter: var(--background-blur);
 }
 
 
@@ -81,241 +89,424 @@
 
 
 /* ---- 4. CHAT  ----*/
-#app-mount .inner-zqa7da:hover {        /* Message input bar */
-    background: rgba(0, 0, 0, 0.4);
-    transition: all 0.8s ease;
-    overflow: visible;
+.container-1r6BKw.themed-ANHk51 {       /* Channel header bar */
+  background-image: transparent;
 }
 
-#app-mount .messages-3amgkR:hover {
-    background-color: rgba(0,0,0,0.4);
-    transition: 500ms ease;
+.children-19S4PO::after {               /* Remove the annoying bar before the bell */
+  content: none ;
 }
 
-
-
-
-
-/* ---- 5. MEMBER LIST & details ----*/
-    /* Hide sidebar*/
-#app-mount .chat-3bRxxu .content-yTz4x3>.flex-1O1GKY:only-child {  /* Collapsed Member List */
-    margin-right: 0px;
+.da-channelTextArea div :hover {        /* Message input bar */
+  background: rgba(0, 0, 0, 0.4);
 }
 
-#app-mount .searchResultsWrap-2DKFzt {
-    z-index: 200 ;
+.containerCozy-jafyvG {                 /* Messages wrapper */
+  display: table ;
+
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25));;
+  border-radius: 5%;
+
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+
+  border-left: solid 1px rgba(106, 171, 142, 0.7);
+  margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
-#app-mount .content-yTz4x3>.flex-1O1GKY {      /* Member list position */
-    margin-right: -185px;
-    z-index: 100;
+.da-chatContent .markup-2BOw-j {       /* The message content */
+  display: inline-block;
 }
 
-/* Collapses Member List */
-#app-mount .membersWrap-2h-GB4 {
-    transform: translate(185px);
-    transition: all 0.5s ease;
-    z-index: 100;
+.da-chatContent .da-markup pre {        /* Code not displaying not properly fix ? */
+  margin-right: 5rem;
 }
 
-/* Remove member details when not hovering */
-#app-mount .members-1998pB .membersGroup-v9BXpm,
-#app-mount .content-3QAtGj, 
-#app-mount .name-uJV0GL {  
-    opacity: 0;
-    transition:opacity 1s ease;
+.da-embedContentInner {                 /* So that embeded content doesn't get affected */
+    border-left: none;
 }
 
-/* Shows Up on Hover */
-#app-mount .members-1998pB:hover .content-3QAtGj,
-#app-mount .members-1998pB:hover .name-uJV0GL,
-#app-mount .membersWrap-2h-GB4:hover,
-#app-mount .membersWrap-2h-GB4:hover {
-    opacity: 1;
-    transform: translate(0px);
-    transition: all 0.5s ease;
-}
-
-#app-mount .membersWrap-2h-GB4:hover {  /* Member container opacity */
-    background: rgba(0,0,0,0.5);
-    transition: all 300ms ease;
-}
-
-/* So Private Channels don't get effected by the code */
-#app-mount .privateChannels-1nO12o .content-3QAtGj, 
-#app-mount .privateChannels-1nO12o .name-uJV0GL,
-#app-mount .content-98HsJk {
-    opacity: 1;
+.da-dividerContent,
+.da-dividerContent:before,
+.da-dividerContent:after {
+  color: rgba(255,255,255,0.8);
 }
 
 
-#app-mount .members-1998pB:hover .membersGroup-v9BXpm {
-    font-size: 12px;
-    width: 100% !important;
-    text-align:left;
-    opacity: 1;
-}
-
-#app-mount .members-1998pB:hover { 
-    transform:translate(0px)
-}
-
-    /* Square profile picture */
-
-/* Change Avatar Size and Background-size is no longer needed */
-.containerCozyBounded-1rKFAn .wrapper-3t9DeA {
-  width: 40px !important;
-  height: 40px !important;
-  transition: all .9s ease;
-   opacity: 1 !important;
-}
-.containerCozyBounded-1rKFAn .wrapper-3t9DeA:hover {
-  width: 60px !important;
-  height: 60px !important;
-}
-/* Allows you to change border-radius don't touch */
-.avatar-17mtNa .wrapper-3t9DeA foreignObject[mask] {
-    mask: none;
-}
-/* Changes Border-Radius */
-.avatar-VxgULZ {
-    border-radius: 10px;
-}
 
 
-#app-mount .wrapper-3t9DeA * { /* Allow changes */
-    overflow: visible; mask: none; 
+
+/* ---- 5. MEMBER LIST ----*/
+
+/* -- Hide sidebar --*/
+.content-yTz4x3>.flex-1O1GKY {          /* Member list position */
+  margin-right: -185px;
 }
 
-#app-mount .wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Position */
-    x: 0; y: 0; 
+.da-members {                          /* Collapses Member List */
+  transform: translate(185px);
+  transition: all 300ms ease;
 }
 
-#app-mount .wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Properly size images in datails window  */
-    width: 80px; height: 80px; 
+.da-members .membersGroup-v9BXpm,
+.content-3QAtGj,
+.name-uJV0GL {                          /* Remove member details when not hovering */
+  opacity: 0;
+  transition:opacity 1s ease;
 }
 
-#app-mount .wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Properly size images in sidebar  */
-    width: 32px; height: 32px; overflow: visible; x: -14.5; y: -17; 
+.da-members:hover .content-3QAtGj,
+.da-members:hover .name-uJV0GL,
+.da-members:hover {                     /* Shows Up on Hover */
+  opacity: 1;
+  transform: translate(0px);
+  transition: all 300ms ease;
 }
 
-#app-mount .wrapper-3t9DeA img {    /* Make images square */
-    border-radius: 0%; 
+.da-members:hover {                     /* Background of the list */
+  background: var(--member-list-background-color) !important;
 }
 
-#app-mount .wrapper-3t9DeA[aria-label*="mobile"]:after { /* Mobile icon */
-    content: ""; 
-    -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPHBhdGggZD0iTTE1LjUgMWgtOEM2LjEyIDEgNSAyLjEyIDUgMy41djE3QzUgMjEuODggNi4xMiAyMyA3LjUgMjNoOGMxLjM4IDAgMi41LTEuMTIgMi41LTIuNXYtMTdDMTggMi4xMiAxNi44OCAxIDE1LjUgMXptLTQgMjFjLS44MyAwLTEuNS0uNjctMS41LTEuNXMuNjctMS41IDEuNS0xLjUgMS41LjY3IDEuNSAxLjUtLjY3IDEuNS0xLjUgMS41em00LjUtNEg3VjRoOXYxNHoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg=="); 
-    -webkit-mask-size: 16px; 
-    -webkit-mask-repeat: no-repeat; 
-    -webkit-mask-position: center; display: block; position: absolute; 
-    width: 12px; height: 16px; top: 50%; 
-    transform: translateY(-50%); right: -171px; 
-    background: var(--rs-online-color); z-index: 1; 
+.privateChannels-1nO12o .content-3QAtGj,
+.privateChannels-1nO12o .name-uJV0GL,
+.content-98HsJk {      /* So Private Channels don't get effected by the code */
+  opacity: 1;
 }
 
+.members-1998pB:hover .membersGroup-v9BXpm {     /* Roles categories in list */
+  font-size: 12px;
+  text-align:center;
+  margin-bottom: 2px;
+  opacity: 1;
+}
+/* ---------- */
 
-#app-mount .wrapper-3t9DeA rect { /* Limit outline & position in detail tab */
-    x: 0; 
-    y: 0; 
-    width: 100%; 
-    height: 100%; 
-    fill: transparent; 
-    stroke-width: var(--rs-width); 
+
+
+/* Bigger profile picture on hover */
+  .da-containerCozy .wrapper-3t9DeA:hover {       /* Resize on hover */
+  transform: scale(2);
+  transition: all .7s ease;
+  z-index: 1;
+}
+/* ---------- */
+
+
+
+/* -- Square profile picture --*/
+
+.wrapper-3t9DeA * {                              /* Allow changes */
+  mask: none;
+}
+
+.wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Status position in member list */
+  x: 0;
+  y: 0;
+}
+
+.wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Status when in view profile */
+  width: 80px;
+  height: 80px;
+}
+
+.wrapper-3t9DeA .cursorDefault-dsQJ1n rect {     /* Status when in when detail */
+  x: -49;
+  y: -53;
+}
+
+.wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Status position in member list  */
+  width: 32px;
+  height: 32px;
+  overflow: visible;
+  x: -14.5;
+  y: -17;
+}
+
+.wrapper-3t9DeA img {           /* Make images square */
+  border-radius: 0%;
+}
+
+.wrapper-3t9DeA rect {          /* Limit outline & position in detail tab */
+  x: 0;
+  y: 0;
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: var(--rs-width);
+}
+
+.wrapper-3t9DeA[style*="height: 32px"] foreignObject+svg+rect[width="25"] { /*fix?*/
+  fill: rgba(0, 0, 0, .5);
+  x: 0 !important;
+  y: 0 !important;
+  rx: inherit;
+  height: 32px;
+  width: 32px;
+  opacity: 1;
+  transition: fill 500ms ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
 }
 
 /* Online  */
-#app-mount .wrapper-3t9DeA rect[fill="#43b581"], 
-#app-mount .wrapper-3t9DeA rect[fill="rgba(67, 181, 129, 1)"], 
-#app-mount .wrapper-3t9DeA rect[mask*="online"] { 
-    stroke: var(--rs-online-color); 
+.wrapper-3t9DeA rect[fill="#43b581"],
+.wrapper-3t9DeA rect[fill="rgba(67, 181, 129, 1)"],
+.wrapper-3t9DeA rect[mask*="online"] {
+  stroke: var(--rs-online-color);
 }
 
 /* Idle */
-#app-mount .wrapper-3t9DeA rect[fill="#faa61a"],
-#app-mount .wrapper-3t9DeA rect[fill="rgba(250, 166, 26, 1)"], 
-#app-mount .wrapper-3t9DeA rect[mask*="idle"] { 
-    stroke: var(--rs-idle-color); 
+.wrapper-3t9DeA rect[fill="#faa61a"],
+.wrapper-3t9DeA rect[fill="rgba(250, 166, 26, 1)"],
+.wrapper-3t9DeA rect[mask*="idle"] {
+  stroke: var(--rs-idle-color);
 }
 
 /* Do not disturb */
-#app-mount .wrapper-3t9DeA rect[fill="#f04747"], /* */
-#app-mount .wrapper-3t9DeA rect[fill="rgba(240, 71, 71, 1)"], 
-#app-mount .wrapper-3t9DeA rect[mask*="dnd"] { 
-    stroke: var(--rs-dnd-color); 
+.wrapper-3t9DeA rect[fill="#f04747"], /* */
+.wrapper-3t9DeA rect[fill="rgba(240, 71, 71, 1)"],
+.wrapper-3t9DeA rect[mask*="dnd"] {
+  stroke: var(--rs-dnd-color);
 }
 
 /* Streaming */
-#app-mount .wrapper-3t9DeA rect[fill="#593695"],
-#app-mount .wrapper-3t9DeA rect[mask*="streaming"] { 
-    stroke: var(--rs-streaming-color); 
+.wrapper-3t9DeA rect[fill="#593695"],
+.wrapper-3t9DeA rect[mask*="streaming"] {
+  stroke: var(--rs-streaming-color);
 }
 
 /* Offline */
-#app-mount .wrapper-3t9DeA rect[fill="#747f8d"], 
-#app-mount .wrapper-3t9DeA rect[mask*="offline"] {
-    stroke: var(--rs-offline-color); 
+.wrapper-3t9DeA rect[fill="#747f8d"],
+.wrapper-3t9DeA rect[mask*="offline"] {
+  stroke: var(--rs-offline-color);
 }
 
 /* Invisible */
-#app-mount .wrapper-3t9DeA rect[mask*="invisible"],
-#app-mount .wrapper-3t9DeA rect[fill="rgba(116, 127, 141, 1)"] 
-{ 
-    stroke: var(--rs-invisible-color); 
+.wrapper-3t9DeA rect[mask*="invisible"],
+.wrapper-3t9DeA rect[fill="rgba(116, 127, 141, 1)"] {
+  stroke: var(--rs-invisible-color);
+}
+/* ---------- */
+
+
+
+/*  MEMBER DETAILS  */
+.headerPlaying-j0WQBV,
+.headerStreaming-2FjmGz {           /* Color when playing or streaming */
+  background-color: var(--member-detail-color-playing);
+}
+
+.body-3iLsc4 {                      /* Role and notes */
+  background-color: #2f3136;
+  color: hsla(0,0%,100%,.8);
+}
+
+.da-avatarHint>* {                  /* Make the view profile square */
+  mask: none;
+}
+/* ---------- */
+
+
+
+
+
+/* ---- 6. SERVER LIST + HOME ICON ---- */
+  #bd-pub-button:hover {                        /* public button */
+    transition: ease 1s ;
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+
+  #bd-pub-button {
+    opacity: 0.5;
+  }
+
+  .guilds-1SWlCJ {                              /* Server list */
+  background-color: var(--server-list-background);
+  margin-bottom: 0.2rem;
+}
+
+.childWrapper-anI2G9 {
+}
+
+.guilds-1SWlCJ:first-child {
+  margin-top: 0.4rem;
+}
+
+.wrapper-25eVIn * {                             /* Make the server icons square */
+  mask: none;
+}
+
+svg [name='Nova_Discord'] {                     /* Home icon */
+  background-image: var(--home-image);
+  background-size: cover;
+  width: 48px ;
+  height: 48px ;
+}
+
+svg [name='Nova_Discord']>path {                /* Remove the discord icon */
+  display: none ;
+}
+/* ---------- */
+
+
+
+
+
+/* ---- 7. CHANNELS ---- */
+.container-PNkimc .unreadBottom-3hWQ7c {  /* Overlapping div at the bottom of the list */
+  background: transparent;
+}
+
+.container-PNkimc>div {                   /* Channel list  */
+  background: rgba(0, 0, 0, 0.2) ;
+}
+
+.da-privateChannels>* {                   /* Direct messages, friends... list */
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.container-PNkimc{                        /* Channels contaner */
+  margin-right: 0.5rem;
+  border-right: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-2K8pFh {                         /* Server channel bar */
+  margin:  0 0.2rem 0.5rem 0.5rem;
 }
 
 
-/* Proper size chat click */
-#app-mount .wrapper-3t9DeA rect[x="16"] { 
-    width: 24px; height: 24px; 
+/* -- Bottom bars -- */
+.panels-j1Uci_ {
+  margin-top: 0.3rem;
 }
 
-#app-mount .wrapper-3t9DeA rect[x="28"] { 
-    width: 40px; height: 40px; overflow: visible; 
+.container-3baos1 .horizontal-2EEEnY {    /* User status bar */
+  border-radius: 10%;
+  margin-right: 0.5rem;
 }
 
-#app-mount .avatarHint-1qgaV3 foreignObject { 
-    mask: none; 
+.container-3baos1 {                       /* Bottom profile bar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+  padding-right: 0px;
+  margin-right: 10px;
+  width: 95%;
 }
 
-#app-mount .avatarHint-1qgaV3 .avatarHintInner-Dco91E { 
-    border-radius: 50% !important; 
+.container-3baos1 .horizontal-2EEEnY button { /* Mute, deafen, settings buttons */
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 45%;
+  margin-right: 2px;
 }
 
-#app-mount .message-1PNnaP .mask-1l8v16 img { 
-    clip-path: circle(calc(19px - var(--rs-small-spacing))); 
+.container-1giJp5 {                               /* Voice chat connect */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  margin-right: 5px;
 }
 
-#app-mount .memberOffline-2lN7gt img { 
-    clip-path: none !important; 
+  .panel-24C3ux  {                                /* PLaying game */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  margin-right: 5px;
+}
+/* ---------- */
+
+
+
+
+
+/* ---- 8. FIND COMMUNITIES ---- */
+.pageWrapper-1PgVDX {            /* Container */
+  background: rgba(0, 0, 0, 0.5);
 }
 
-#app-mount .header-QKLPzZ .wrapper-3t9DeA { 
-    margin-right: 20px !important; 
+.card-3DjzTQ:hover {             /* Servers */
+  background: var(--inner-color);
+}
+/* ---------- */
+
+
+
+
+
+/* ---- 9. MENU BAR ---- */
+.typeWindows-1za-n7 {                    /* Top bar */
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.25));
+  margin-top: 0px;
+  padding-top: 3px;
 }
 
-
-    /*  MEMBER DETAILS  */
-#app-mount .headerPlaying-j0WQBV, 
-#app-mount .headerStreaming-2FjmGz {
-    background-color: var(--member-detail-color-playing);
+.searchBar-3dMhjb {                      /* Search bar */
+  background-color: inherit ;
 }
 
-
-
-/* ---- 6. SERVER LIST ---- */
-#app-mount .guilds-1SWlCJ {
-    border: solid;
-    border-color:  var(--border-color) rgba(0,0,0,0);
-    border-radius: 30px;
-    border-width: 3px;
-    border-style: double;
-    margin-bottom: 0.5%;
+.searchBar-3dMhjb:hover {                /* Search bar hover */
+  background-color: rgba(0, 0, 0, 0.3) ;
+  transition: 300ms ease;
 }
 
-/* ---- 7. Channels ---- */
-#app-mount  .container-PNkimc:hover {
-    background-color: rgba(0,0,0,0.3);
-    transition: 300ms ease;
+.public-DraftEditorPlaceholder-inner {    /* Searchbar text */
+  color: rgb(220, 221, 222);
+  opacity: 1  ;
 }
+
+.winButtonMinMax-PBQ3gm:hover {          /* Minimize window */
+  color: var(--minimize-color);
+}
+
+.winButtonMinMax:hover {                 /* Maximize window */
+  color: var(--maximize-color);
+}
+
+.winButtonMinMax:hover {                 /* Close window */
+  color: var(--close-color);
+}
+/* ---------- */
+
+
+
+
+
+/* ---- 10. MESSAGE AND MEMBER SEARCH ---- */
+.theme-dark .searchResultsWrap-2DKFzt {         /* Message and Member search*/
+  z-index: 200 ;
+  background-color: inherit;
+  border-radius: 10px;
+  border-left: solid rgba(0, 0, 0, 0.4) 1px;
+}
+
+.theme-dark  .da-searchHeader {                 /* Header. Total result, recent, pertinent container */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 1 ;
+}
+
+.theme-dark .da-tab,
+.theme-dark .da-totalResults {                  /* Total result, recent, pertinent */
+  opacity: 0.8;
+}
+
+.theme-dark .channelSeparator-1X1FuH .channelName-1QajIf {  /* Channel name*/
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.theme-dark .searchResult-3pzFAB .hit-NLlWXA,
+.theme-dark .searchResult-3pzFAB,
+.theme-dark .searchResultMessage-2VxO12 .hit-NLlWXA,
+.theme-dark .searchResult-3pzFAB.expanded-v2Szsz .searchResultMessage-2VxO12.hit-NLlWXA {       /* Selected message */
+  background-color: rgba(0, 0, 0, 0.4) ;
+  box-shadow: none ;
+  border-radius: 10px;
+}
+
+.theme-dark .searchResultMessage-2VxO12 {       /* Center message */
+ margin: 0px 0px 5px 0px;
+}
+
+.theme-dark .searchResult-3pzFAB:before,
+.theme-dark .searchResult-3pzFAB:after {        /* Fade at the top and bottom of a result */
+  background-image: none;
+}
+/* ---------- */
 
