@@ -35,15 +35,6 @@
 
   --font-size : 16px ;                                              /* Default 16px */
 
-  /* [ Member status ] */
-  --rs-width: 2px;                                                  /* Width / thickness of status border */
-  --rs-online-color: #43b581;                                       /* Color for online status */
-  --rs-idle-color: #faa61a;                                         /* Color for idle status */
-  --rs-dnd-color: #f04747;                                          /* Color for do not disturb status */
-  --rs-offline-color: #636b75;                                      /* Color for offline status */
-  --rs-invisible-color: #8B4513;                                    /* Color for invisible status - Note this will only show for your own invisibility */
-  --rs-streaming-color: #643da7;                                    /* Color for streaming status */
-
   /* [ Member sidebar ] */
   --member-detail-color-playing: rgba(164, 189, 252, 1);            /* Color when someone is in game*/
   --member-list-background-color: rgba(0, 0, 0, 0.75);              /* Color of the member bar when displayed */
@@ -60,7 +51,7 @@
   --maximize-color: rgba(255, 255, 255, 1);                         /* Color of the maximize button */
   --close-color: rgba(255,255,255,1);                               /* Color of the close window button */
 
-  --accent-color-1 : rgba(106, 171, 142, 0.7)                       /* Main color 1: Chat  */
+  --accent-color-1 : rgba(106, 171, 142, 0.75)                       /* Main color 1: Chat  */
 }
 
 
@@ -72,6 +63,7 @@
   font-family: 'Dosis', sans-serif;
   font-size: var(--font-size);
 }
+/*------------*/
 
 
 
@@ -97,7 +89,7 @@
   #app-mount .inner-zqa7da,                   /* Chat input bar */
   #app-mount .sidebar-2K8pFh,                 /* Channel container */
   #app-mount .panels-j1Uci_,                  /* Bottom status bar */
-  #app-mount .container-1r6BKw.themed-ANHk51, /* Channel header, notif, pinned,etc. */
+  #app-mount .themed-ANHk51,                  /* Headers */
   #app-mount .membersWrap-2h-GB4,             /* Members */
   #app-mount .bg-h5JY_x,                      /* Background color */
   #app-mount .topSectionNormal-2-vo2m,        /* Profile details (when clicking on picture) */
@@ -112,6 +104,7 @@
 .firefoxFixScrollFlex-cnI2ix::-webkit-scrollbar {   /* Remove scrollbar */
     display: none;
 }
+/*------------*/
 
 
 
@@ -132,18 +125,24 @@
 
     filter: var(--background-blur);
 }
+/*------------*/
 
 
 
 
 
 /* ---- 4. CHAT  ----*/
-.container-1r6BKw.themed-ANHk51 {       /* Channel header bar */
-  background-image: transparent;
-}
-
 .children-19S4PO::after {               /* Remove the annoying bar before the bell */
   content: none ;
+}
+
+.da-chat .form-2fGMdU{                  /* Chat input wrapper */
+border-top: solid 1px var(--accent-color-1);
+
+margin:0px;
+
+padding-left:20px;
+padding-right:20px;
 }
 
 .da-channelTextArea {                   /* Message input bar */
@@ -184,7 +183,6 @@
   width: 30rem;
 }
 
-
 .da-embedContentInner {                 /* So that embeded content doesn't get affected */
     border-left: none;
 }
@@ -194,6 +192,7 @@
 .da-dividerContent:after {
   color: rgba(255,255,255,0.8);
 }
+/*------------*/
 
 
 
@@ -215,7 +214,7 @@
 .content-3QAtGj,
 .name-uJV0GL {                          /* Remove member details when not hovering */
   opacity: 0;
-  transition:opacity 1s ease;
+  transition: 1s ease;
 }
 
 .da-members:hover .content-3QAtGj,
@@ -246,7 +245,7 @@
 
 
 
-/* Bigger profile picture on hover */
+/* --Bigger profile picture on hover-- */
   .da-containerCozy .wrapper-3t9DeA:hover {       /* Resize on hover */
   transform: scale(2);
   transition: all .7s ease;
@@ -257,107 +256,8 @@
 
 
 /* -- Square profile picture --*/
-
-.wrapper-3t9DeA * {                              /* Allow changes */
+.da-avatar foreignObject {
   mask: none;
-}
-
-.wrapper-3t9DeA .mask-1l8v16 > rect[x="22"] {    /* Status position in member list */
-  x: 0;
-  y: 0;
-}
-
-.wrapper-3t9DeA[style*="width: 80px;"] rect {    /* Status when in view profile */
-  width: 80px;
-  height: 80px;
-}
-
-.wrapper-3t9DeA .cursorDefault-dsQJ1n rect {     /* Status when in when detail */
-  x: -49;
-  y: -53;
-}
-
-.wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Status position in member list  */
-  width: 32px;
-  height: 32px;
-  overflow: visible;
-  x: -14.5;
-  y: -17;
-}
-
-.wrapper-3t9DeA img {           /* Make images square */
-  border-radius: 0%;
-}
-
-.wrapper-3t9DeA rect {          /* Limit outline & position in detail tab */
-  x: 0;
-  y: 0;
-  width: 100%;
-  height: 100%;
-  fill: transparent;
-  stroke-width: var(--rs-width);
-}
-
-.wrapper-3t9DeA[style*="width: 32px;"] rect {    /* Status position in member list  */
-  width: 32px;
-  height: 32px;
-  overflow: visible;
-  x: -14.5;
-  y: -17;
-}
-
-.wrapper-3t9DeA[style*="height: 32px"] foreignObject+svg+rect[width="25"] { /*fix?*/
-  fill: rgba(0, 0, 0, .5);
-  x: 0 !important;
-  y: 0 !important;
-  rx: inherit;
-  height: 32px;
-  width: 32px;
-  opacity: 1;
-  transition: fill 500ms ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
-}
-
-/* Online  */
-.wrapper-3t9DeA rect[fill="#43b581"],
-.wrapper-3t9DeA rect[fill="rgba(67, 181, 129, 1)"],
-.wrapper-3t9DeA rect[mask*="online"] {
-  stroke: var(--rs-online-color);
-}
-
-/* Idle */
-.wrapper-3t9DeA rect[fill="#faa61a"],
-.wrapper-3t9DeA rect[fill="rgba(250, 166, 26, 1)"],
-.wrapper-3t9DeA rect[mask*="idle"] {
-  stroke: var(--rs-idle-color);
-}
-
-/* Do not disturb */
-.wrapper-3t9DeA rect[fill="#f04747"],
-.wrapper-3t9DeA rect[fill="rgba(240, 71, 71, 1)"],
-.wrapper-3t9DeA rect[mask*="dnd"] {
-  stroke: var(--rs-dnd-color);
-}
-
-/* Streaming */
-.wrapper-3t9DeA rect[fill="#593695"],
-.wrapper-3t9DeA rect[mask*="streaming"] {
-  stroke: var(--rs-streaming-color);
-}
-
-/* Offline */
-.wrapper-3t9DeA rect[fill="#747f8d"],
-.wrapper-3t9DeA rect[mask*="offline"] {
-  stroke: var(--rs-offline-color);
-}
-
-/* Invisible */
-.wrapper-3t9DeA rect[mask*="invisible"],
-.wrapper-3t9DeA rect[fill="rgba(116, 127, 141, 1)"] {
-  stroke: var(--rs-invisible-color);
 }
 /* ---------- */
 
@@ -444,6 +344,7 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 .sidebar-2K8pFh {                         /* Server channel bar */
   margin:  0 0.2rem 0.5rem 0.5rem;
 }
+
 
 
 /* -- Bottom bars -- */
@@ -605,8 +506,8 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 
 /* ---- 11. HOME ---- */
-/* --Activity tab-- */
 
+/* --Activity tab-- */
 .activityFeed-1C0EmJ .card-GqTca8,      /* Cards */
 .theme-dark .popout-3G62UL,             /* Hover popout */
 .buttonColor-1agP3J {                   /* Share button */
@@ -658,13 +559,12 @@ aside .card-GqTca8 .da-clickable {              /* Quick launcher games */
 
 
 
-
 /* --Friends tab-- */
 .da-themed .da-tabBar div {                     /* Buttons: online, all, pending, blocked */
   background-color: rgba(0, 0, 0, 0.35);
 }
 
-.da-themed .da-selected {                       /* Selected button */
+.topPill-30KHOu .da-selected {                  /* Selected button */
     background-color: var(--accent-color-1) !important;
 }
 
