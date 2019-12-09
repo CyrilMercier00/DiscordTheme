@@ -1,8 +1,8 @@
 /**
- * @name Incroyable du cul
+ * @name AAAAAAAAAAAAAAAAAAAAAAA
  * @author equilix
  * @version 1.0
- * @description Mon theme
+ * @description yes
 */
 
 /*------------------------------------------------------------------
@@ -13,13 +13,11 @@
 3. Background
 4. Chat
 5. Member list
-    -165: Hide sidebar
-    -250: Square profile picture
-    -334: Member details
 6. Channels list
 8. Find Communities
 9. Menu bar
 10. Message and members search
+11. Home
 ------------------------------------------------------------------*/
 :root {
 
@@ -32,6 +30,7 @@
   --background-image-url: url("https://i.imgur.com/p3wMXP6.jpg") ;  /* Background image */
   --home-image: url("https://i.imgur.com/vJ6EO68.jpg") ;            /* Home picture (top left) */
   --background-blur: blur(0.5px);                                   /* Background image blur */
+  --main-transparency: rgba(0, 0, 0, 0.03);                         /* Overall transparency */
 
   --font-size : 16px ;                                              /* Default 16px */
 
@@ -97,7 +96,7 @@
   #app-mount .body-3ND3kc,
   #app-mount .da-topSectionSpotify,
   #app-mount .topSectionPlaying-1J5E4n {
-    background: rgba(0, 0, 0, 0.03);
+    background: var(--main-transparency);
 }
 
 
@@ -171,15 +170,29 @@ padding-right:20px;
   margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
+
+
+.embedProvider-3k5pfl {                 /* Title */
+
+}
+
+.embedTitle-3OXDkz {                    /* Link */
+
+}
+
+.embedDescription-1Cuq9a {              /* Text */
+
+}
+
 .da-chatContent .markup-2BOw-j {       /* The message content */
   display: inline-block;
 }
 
-.da-chatContent .da-markup pre {        /* Code not displaying not properly fix ? */
+.da-chatContent .da-markup pre {       /* Code not displaying not properly fix */
   margin-right: 5rem;
 }
 
-.da-chatContent .contentCozy-3XX413 textarea {    /* Dirty fix for edit message  */
+.da-chatContent .contentCozy-3XX413 textarea {    /* Dirty fix for message edit */
   width: 30rem;
 }
 
@@ -554,6 +567,11 @@ aside .card-GqTca8 .da-clickable {              /* Quick launcher games */
 .da-premiumContainer .da-categoryHeader {
   border: none ;
   margin-bottom:-5px;
+}
+
+.da-tier1Banner {
+    border-color: var(----accent-color-1);
+    background-color: var(--tr)
 }
 /* ---------- */
 

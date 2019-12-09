@@ -1,50 +1,41 @@
 /**
- * @name ooad
+ * @name Test Transparency
  * @author equilix
- * @version 1.1.0
- * @description u
+ * @version 1.0
+ * @description Equilix's theme
 */
 
 @import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
 @import url(https://raw.githubusercontent.com/equilix/DiscordTheme/master/DiscordThemeMain.theme.css);
 
+/*
+   Made for the dark theme.
+   Require normalized classes (active by default).
+*/
+
 :root {
-  /*
-  Default discord colors :
-  - Discord white: rgb(220, 221, 222)
-  - Discord light gray: rgb(54, 57, 62)
-  - Discord dark gray: rgb(49, 50, 55)
-  - Discord black: rgb(38, 37, 42)
-  */
+/* [ Commons ] */
+--background-image-url: url("https://i.imgur.com/p3wMXP6.jpg") ;  /* Background image */
+--home-image: url("") ;            				  /* Home picture (top left) */
+--background-blur: blur(0.5px);                                   /* Background image blur */
 
-  --background-image-url: url("https://i.imgur.com/p3wMXP6.jpg") ;  /* Background image */
-  --home-image: url("https://i.imgur.com/vJ6EO68.jpg") ;            /* Home picture (top left) */
-  --background-blur: blur(0.5px);                                   /* Background image blur */
+--font-size : 16px ;                                              /* Default 16px */
 
-  --font-size : 16px ;                                              /* Default 16px */
+/* [ Member sidebar ] */
+--member-detail-color-playing: rgba(164, 189, 252, 1);            /* Color when someone is in game*/
+--member-list-background-color: rgba(0, 0, 0, 0.75);              /* Color of the member bar when displayed */
 
-  /* [ Member status ] */
-  --rs-width: 2px;                                                  /* Width / thickness of status border */
-  --rs-online-color: #43b581;                                       /* Color for online status */
-  --rs-idle-color: #faa61a;                                         /* Color for idle status */
-  --rs-dnd-color: #f04747;                                          /* Color for do not disturb status */
-  --rs-offline-color: #636b75;                                      /* Color for offline status */
-  --rs-invisible-color: #8B4513;                                    /* Color for invisible status - Note this will only show for your own invisibility */
-  --rs-streaming-color: #643da7;                                    /* Color for streaming status */
+/* [ Server list ] */
+--server-list-background:rgba(0, 0, 0, 0.35);                     /* Background of the server list */
 
-  /* [ Member sidebar ] */
-  --member-detail-color-playing: rgba(164, 189, 252, 1);            /* Color when someone is in game*/
-  --member-list-background-color: rgba(0, 0, 0, 0.75);              /* Color of the member bar when displayed */
+/* [ Server Discovery ] */
+/* Color when hovering over a card - Default is (32,34,37,1) */
+--inner-card-color: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) );
 
-  /* [ Server list ] */
-  --server-list-background:rgba(0, 0, 0, 0.35);                     /* Background of the server list */
+/* [ Menu bar (the bar at the top) ] */
+--minimize-color: rgba(255, 255, 255,1);                          /* Color of the minimize button */
+--maximize-color: rgba(255, 255, 255, 1);                         /* Color of the maximize button */
+--close-color: rgba(255,255,255,1);                               /* Color of the close window button */
 
-  /* [ Server Discovery ] */
-  --inner-color : rgba(164, 189, 252, 0.35);                        /* Color when hovering over a server - Default is (35,39,42,1) */
-
-  /* [ Menu bar (the bar at the top) ] */
-  --minimize-color: rgba(255, 255, 255,1);                          /* Color of the minimize button */
-  --maximize-color: rgba(255, 255, 255, 1);                         /* Color of the maximize button */
-  --close-color: rgba(255,255,255,1);                               /* Color of the close window button */
+--accent-color-1 : rgba(106, 171, 142, 0.75)                       /* Main color 1: Chat  */
 }
-
