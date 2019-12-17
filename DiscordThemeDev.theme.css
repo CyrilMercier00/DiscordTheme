@@ -144,8 +144,8 @@ padding-left:20px;
 padding-right:20px;
 }
 
-.da-channelTextArea {                   /* Message input bar */
-  background-color: rgba(0, 0, 0, 0.3);
+.da-chat .da-channelTextArea:first-child {  /* Message input bar */
+  background-color: rgba(0, 0, 0, 0.3) !important;
   border-radius: 15px;
 
   padding-top:0px;
