@@ -8,34 +8,41 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
 @import url(https://raw.githubusercontent.com/equilix/DiscordTheme/master/DiscordThemeMain.theme.css);
 
-/*
-   Made for the dark theme.
-   Require normalized classes (active by default).
-*/
-
 :root {
-/* [ Commons ] */
---background-image-url: url("https://i.imgur.com/p3wMXP6.jpg") ;  /* Background image */
---home-image: url("") ;            				  /* Home picture (top left) */
---background-blur: blur(0.5px);                                   /* Background image blur */
 
---font-size : 16px ;                                              /* Default 16px */
+  /*
+     Made for the dark theme.
+     Require normalized classes (active by default).
+     The theme is still a work in progress, some elements still have de default look.
+ */
 
-/* [ Member sidebar ] */
---member-detail-color-playing: rgba(164, 189, 252, 1);            /* Color when someone is in game*/
---member-list-background-color: rgba(0, 0, 0, 0.75);              /* Color of the member bar when displayed */
+  /* [ Commons ] */
+  --background-image-url: url("https://i.imgur.com/p3wMXP6.jpg") ;  /* Background image */
+  --home-image: url("https://img.icons8.com/color/344/discord-logo.png") ;            /* Home picture (top left) */
+  --background-blur: blur(0.5px);                                   /* Background image blur */
+  --main-transparency: rgba(0, 0, 0, 0.03);                         /* Overall transparency / color */
+  --secondary-transparency: rgba(0, 0, 0, 0.2);			   
+  --hover-transparency: rgba( 0, 0, 0, 0.5);
 
-/* [ Server list ] */
---server-list-background:rgba(0, 0, 0, 0.35);                     /* Background of the server list */
+/* [Chat] */
+  --message-transparency: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25));
+  --font-size : 16px ;                                              /* Default 16px */
 
-/* [ Server Discovery ] */
-/* Color when hovering over a card - Default is (32,34,37,1) */
---inner-card-color: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) );
+  /* [ Member sidebar ] */
+  --member-detail-color-playing: rgba(164, 189, 252, 1);            /* Color when someone is in game*/
+  --member-list-background-color: rgba(0, 0, 0, 0.75);              /* Color of the member bar when displayed */
 
-/* [ Menu bar (the bar at the top) ] */
---minimize-color: rgba(255, 255, 255,1);                          /* Color of the minimize button */
---maximize-color: rgba(255, 255, 255, 1);                         /* Color of the maximize button */
---close-color: rgba(255,255,255,1);                               /* Color of the close window button */
+  /* [ Server list ] */
+  --server-list-background:rgba(0, 0, 0, 0.35);                     /* Background of the server list */
 
---accent-color-1 : rgba(106, 171, 142, 0.75)                       /* Main color 1: Chat  */
+  /* [ Server Discovery ] */
+  /* Color when hovering over a card - Default is (32,34,37,1) */
+  --inner-card-color: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) );
+
+  /* [ Menu bar (the bar at the top) ] */
+  --minimize-color: rgba(255, 255, 255,1);                          /* Color of the minimize button */
+  --maximize-color: rgba(255, 255, 255, 1);                         /* Color of the maximize button */
+  --close-color: rgba(255,255,255,1);                               /* Color of the close window button */
+
+  --accent-color-1 : rgba(106, 171, 142, 0.75)                       /* Main color 1: Chat  */
 }

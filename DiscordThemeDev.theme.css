@@ -28,10 +28,14 @@
 
   /* [ Commons ] */
   --background-image-url: url("https://i.imgur.com/p3wMXP6.jpg") ;  /* Background image */
-  --home-image: url("https://i.imgur.com/vJ6EO68.jpg") ;            /* Home picture (top left) */
+  --home-image: url("https://img.icons8.com/color/344/discord-logo.png") ;            /* Home picture (top left) */
   --background-blur: blur(0.5px);                                   /* Background image blur */
-  --main-transparency: rgba(0, 0, 0, 0.03);                         /* Overall transparency */
+  --main-transparency: rgba(0, 0, 0, 0.03);                         /* Overall transparency / color */
+  --secondary-transparency: rgba(0, 0, 0, 0.2);
+  --hover-transparency: rgba( 0, 0, 0, 0.5);
 
+/* [Chat] */
+  --message-transparency: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25));
   --font-size : 16px ;                                              /* Default 16px */
 
   /* [ Member sidebar ] */
@@ -135,7 +139,7 @@
   content: none ;
 }
 
-.da-chat .form-2fGMdU{                  /* Chat input wrapper */
+.da-chat .form-2fGMdU {                  /* Chat input wrapper */
 border-top: solid 1px var(--accent-color-1);
 
 margin:0px;
@@ -144,8 +148,8 @@ padding-left:20px;
 padding-right:20px;
 }
 
-.da-chat .da-channelTextArea:first-child {  /* Message input bar */
-  background-color: rgba(0, 0, 0, 0.3) !important;
+.da-channelTextArea .scrollableContainer-2NUZem  {                   /* Message input bar */
+  background-color: var(--secondary-transparency) !important;
   border-radius: 15px;
 
   padding-top:0px;
@@ -153,14 +157,14 @@ padding-right:20px;
 }
 
 .da-channelTextArea:hover {             /* Message input bar */
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--hover-transparency);
   transition: 300ms ease ;
 }
 
 .containerCozy-jafyvG {                 /* Messages wrapper */
   display: table ;
 
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25));
+  background: var(--message-transparency);
   border-radius: 5%;
 
   border-top-left-radius: 0%;
@@ -170,19 +174,6 @@ padding-right:20px;
   margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
-
-
-.embedProvider-3k5pfl {                 /* Title */
-
-}
-
-.embedTitle-3OXDkz {                    /* Link */
-
-}
-
-.embedDescription-1Cuq9a {              /* Text */
-
-}
 
 .da-chatContent .markup-2BOw-j {       /* The message content */
   display: inline-block;
@@ -342,7 +333,7 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 }
 
 .container-PNkimc>div {                   /* Channel list  */
-  background: rgba(0, 0, 0, 0.2) ;
+  background: var(--secondary-transparency) ;
 }
 
 .da-privateChannels>* {                   /* Direct messages, friends... list */
@@ -527,6 +518,11 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
   background-color: rgba(0, 0, 0, 0.70);
 }
 
+.da-activityFeed .da-card .da-inset {   /* Friends in-game activity */
+     background-color: transparent;
+     border-left: solid 2px var(--accent-color-1);
+}
+
 .da-popoutContainer:hover {                     /* Recently played hover */
   background-color: rgba(0, 0, 0, 0.50) !important;
 }
@@ -543,9 +539,16 @@ aside .card-GqTca8 .da-clickable {              /* Quick launcher games */
 
 
 /* --Library-- */
-.da-stickyScroller .stickyHeader-1pqx0j {       /* List header */
+.da-stickyScroller .stickyHeader-1pqx0j {           /* List header */
   background-color: rgba(0, 0, 0, 0.35);
 }
+
+.da-systemPad .da-rowWrapper .da-bodyCell button {   /* Play button */
+    background-color: transparent;
+    border: solid 1px var(--accent-color-1);
+    border-radius: 40px;
+}
+
 /* ---------- */
 
 
@@ -569,9 +572,9 @@ aside .card-GqTca8 .da-clickable {              /* Quick launcher games */
   margin-bottom:-5px;
 }
 
-.da-tier1Banner {
-    border-color: var(----accent-color-1);
-    background-color: var(--tr)
+.tier1Banner-1B_WXY.da-tier1Banner {
+    border-color:red !important;
+    background-color: red !important;
 }
 /* ---------- */
 
