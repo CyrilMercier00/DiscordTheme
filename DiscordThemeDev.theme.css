@@ -1,8 +1,8 @@
 /**
- * @name AAAAAAAAAAAAAAAAAAAAAAA
- * @author equilix
- * @version 1.0
- * @description yes
+* @name AAAAAAAAAAAAAAAAAAAAAAA
+* @author equilix
+* @version 1.0
+* @description yes
 */
 
 /*------------------------------------------------------------------
@@ -21,50 +21,49 @@
 ------------------------------------------------------------------*/
 :root {
 
-  /*
-     Made for the dark theme.
-     Require normalized classes (active by default).
- */
+    /*
+    Made for the dark theme.
+    Require normalized classes (active by default).
+    The theme is still a work in progress, some elements still have de default look.
+    */
 
-  /* [ Commons ] */
-  --background-image-url: url("https://i.imgur.com/p3wMXP6.jpg") ;  /* Background image */
-  --home-image: url("https://img.icons8.com/color/344/discord-logo.png") ;            /* Home picture (top left) */
-  --background-blur: blur(0.5px);                                   /* Background image blur */
-  --main-transparency: rgba(0, 0, 0, 0.03);                         /* Overall transparency / color */
-  --secondary-transparency: rgba(0, 0, 0, 0.2);
-  --hover-transparency: rgba( 0, 0, 0, 0.5);
+    /* [ Commons ] */
+    --background-image-url: url("https://i.imgur.com/p3wMXP6.jpg") ;  /* Background image */
+    --home-image: url("https://i.imgur.com/vJ6EO68.jpg") ;            /* Home picture (top left) */
+    --background-blur: blur(0.5px);                                   /* Background image blur */
+    --main-transparency: rgba(0, 0, 0, 0.03);                         /* Overall transparency / color */
+    --secondary-transparency: rgba(0, 0, 0, 0.2);
+    --hover-transparency: rgba( 0, 0, 0, 0.5);
 
-/* [Chat] */
-  --message-transparency: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25));
-  --font-size : 16px ;                                              /* Default 16px */
+    /* [Chat] */
+    --message-transparency: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25));
+    --font-size : 16px ;                                              /* Default 16px */
 
-  /* [ Member sidebar ] */
-  --member-detail-color-playing: rgba(164, 189, 252, 1);            /* Color when someone is in game*/
-  --member-list-background-color: rgba(0, 0, 0, 0.75);              /* Color of the member bar when displayed */
+    /* [ Member sidebar ] */
+    --member-detail-color-playing: rgba(164, 189, 252, 1);            /* Color when someone is in game*/
+    --member-list-background-color: rgba(0, 0, 0, 0.75);              /* Color of the member bar when displayed */
 
-  /* [ Server list ] */
-  --server-list-background:rgba(0, 0, 0, 0.35);                     /* Background of the server list */
+    /* [ Server list ] */
+    --server-list-background:rgba(0, 0, 0, 0.35);                     /* Background of the server list */
 
-  /* [ Server Discovery ] */
-  /* Color when hovering over a card - Default is (32,34,37,1) */
-  --inner-card-color: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) );
+    /* [ Server Discovery ] */
+    /* Color when hovering over a card - Default is (32,34,37,1) */
+    --inner-card-color: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) );
 
-  /* [ Menu bar (the bar at the top) ] */
-  --minimize-color: rgba(255, 255, 255,1);                          /* Color of the minimize button */
-  --maximize-color: rgba(255, 255, 255, 1);                         /* Color of the maximize button */
-  --close-color: rgba(255,255,255,1);                               /* Color of the close window button */
+    /* [ Menu bar (the bar at the top) ] */
+    --minimize-color: rgba(255, 255, 255,1);                          /* Color of the minimize button */
+    --maximize-color: rgba(255, 255, 255, 1);                         /* Color of the maximize button */
+    --close-color: rgba(255,255,255,1);                               /* Color of the close window button */
 
-  --accent-color-1 : rgba(106, 171, 142, 0.75)                       /* Main color 1: Chat  */
+    --accent-color-1 : rgba(106, 171, 142, 0.75)                       /* Main color 1: Chat  */
 }
-
-
 
 /* ---- 1. FONT ---- */
 @import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
 
 #app-mount {
-  font-family: 'Dosis', sans-serif;
-  font-size: var(--font-size);
+    font-family: 'Dosis', sans-serif;
+    font-size: var(--font-size);
 }
 /*------------*/
 
@@ -73,33 +72,34 @@
 
 
 /* ---- 2. TRANSPARENCY ---- */
-  #app-mount,
-  #app-mount .app-2rEoOp,                     /* app inner	*/
-  #app-mount .layer-3QrUeG,                   /* layer container*/
-  #app-mount .container-PNkimc,               /* Channels	inner*/
-  #app-mount .activityFeed-1C0EmJ,            /* Activity feed */
-  #app-mount .privateChannels-1nO12o,         /* dm channels*/
-  #app-mount .noChannel-Z1DQK7,               /* No channel*/
-  #app-mount .gameLibrary-TTDw4Y,             /* Library  */
-  #app-mount .root-1BQpZw,                    /* Gift inventory */
-  #app-mount .applicationStore-1pNvnv,        /* Store */
-  #app-mount .lfg-3zDSPN,                     /* LFG */
-  #app-mount .chat-3bRxxu,                    /* chat container*/
-  #app-mount .container-3gCOGc,               /* Friends */
-  #app-mount .scroller-2FKFPG,                /* Scroller	*/
-  #app-mount .standardSidebarView-3F1I7i,     /* Settings */
-  #app-mount .contentRegion-3nDuYy,           /* Settings - my account */
-  #app-mount .inner-zqa7da,                   /* Chat input bar */
-  #app-mount .sidebar-2K8pFh,                 /* Channel container */
-  #app-mount .panels-j1Uci_,                  /* Bottom status bar */
-  #app-mount .themed-ANHk51,                  /* Headers */
-  #app-mount .membersWrap-2h-GB4,             /* Members */
-  #app-mount .bg-h5JY_x,                      /* Background color */
-  #app-mount .topSectionNormal-2-vo2m,        /* Profile details (when clicking on picture) */
-  #app-mount .root-SR8cQa,
-  #app-mount .body-3ND3kc,
-  #app-mount .da-topSectionSpotify,
-  #app-mount .topSectionPlaying-1J5E4n {
+#app-mount,
+#app-mount .app-2rEoOp,                     /* app inner	*/
+#app-mount .layer-3QrUeG,                   /* layer container*/
+#app-mount .container-PNkimc,               /* Channels	inner*/
+#app-mount .activityFeed-1C0EmJ,            /* Activity feed */
+#app-mount .privateChannels-1nO12o,         /* dm channels*/
+#app-mount .noChannel-Z1DQK7,               /* No channel*/
+#app-mount .gameLibrary-TTDw4Y,             /* Library  */
+#app-mount .root-1BQpZw,                    /* Gift inventory */
+#app-mount .applicationStore-1pNvnv,        /* Store */
+#app-mount .lfg-3zDSPN,                     /* LFG */
+#app-mount .chat-3bRxxu,                    /* chat container*/
+#app-mount .container-3gCOGc,               /* Friends */
+#app-mount .scroller-2FKFPG,                /* Scroller	*/
+#app-mount .standardSidebarView-3F1I7i,     /* Settings */
+#app-mount .contentRegion-3nDuYy,           /* Settings - my account */
+#app-mount .inner-zqa7da,                   /* Chat input bar */
+#app-mount .sidebar-2K8pFh,                 /* Channel container */
+#app-mount .panels-j1Uci_,                  /* Bottom status bar */
+#app-mount .themed-ANHk51,                  /* Headers */
+#app-mount .membersWrap-2h-GB4,             /* Members */
+#app-mount .bg-h5JY_x,                      /* Background color */
+#app-mount .topSectionNormal-2-vo2m,        /* Profile details (when clicking on picture) */
+#app-mount .video-1FfuMD,		      /* Group call background */
+#app-mount .root-SR8cQa,
+#app-mount .body-3ND3kc,
+#app-mount .da-topSectionSpotify,
+#app-mount .topSectionPlaying-1J5E4n {
     background: var(--main-transparency);
 }
 
@@ -136,65 +136,65 @@
 
 /* ---- 4. CHAT  ----*/
 .children-19S4PO::after {               /* Remove the annoying bar before the bell */
-  content: none ;
+    content: none ;
 }
 
 .da-chat .form-2fGMdU {                  /* Chat input wrapper */
-border-top: solid 1px var(--accent-color-1);
+    border-top: solid 1px var(--accent-color-1);
 
-margin:0px;
+    margin:0px;
 
-padding-left:20px;
-padding-right:20px;
+    padding-left:20px;
+    padding-right:20px;
 }
 
 .da-channelTextArea .scrollableContainer-2NUZem  {                   /* Message input bar */
-  background-color: var(--secondary-transparency) !important;
-  border-radius: 15px;
+    background-color: var(--secondary-transparency) !important;
+    border-radius: 15px;
 
-  padding-top:0px;
-  margin-top:20px;
+    padding-top:0px;
+    margin-top:20px;
 }
 
 .da-channelTextArea:hover {             /* Message input bar */
-  background-color: var(--hover-transparency);
-  transition: 300ms ease ;
+    background-color: var(--hover-transparency);
+    transition: 300ms ease ;
 }
 
 .containerCozy-jafyvG {                 /* Messages wrapper */
-  display: table ;
+    display: table ;
 
-  background: var(--message-transparency);
-  border-radius: 5%;
+    background: var(--message-transparency);
+    border-radius: 5%;
 
-  border-top-left-radius: 0%;
-  border-bottom-left-radius: 0%;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
 
-  border-left: solid 1px var(--accent-color-1);
-  margin: 0.5rem 0rem 0.5rem 0rem;
+    border-left: solid 1px var(--accent-color-1);
+    margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
 
 .da-chatContent .markup-2BOw-j {       /* The message content */
-  display: inline-block;
+    display: inline-block;
 }
 
 .da-chatContent .da-markup pre {       /* Code not displaying not properly fix */
-  margin-right: 5rem;
+    margin-right: 5rem;
 }
 
 .da-chatContent .contentCozy-3XX413 textarea {    /* Dirty fix for message edit */
-  width: 30rem;
+    width: 30rem;
 }
 
 .da-embedContentInner {                 /* So that embeded content doesn't get affected */
-    border-left: none;
+border-left: none;
 }
 
 .da-dividerContent,
 .da-dividerContent:before,
 .da-dividerContent:after {
-  color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.8);
 }
 /*------------*/
 
@@ -206,54 +206,54 @@ padding-right:20px;
 
 /* -- Hide sidebar --*/
 .content-yTz4x3>.flex-1O1GKY {          /* Member list position */
-  margin-right: -185px;
+    margin-right: -185px;
 }
 
 .da-members {                          /* Collapses Member List */
-  transform: translate(185px);
-  transition: all 300ms ease;
+    transform: translate(185px);
+    transition: all 300ms ease;
 }
 
 .da-members .membersGroup-v9BXpm,
 .content-3QAtGj,
 .name-uJV0GL {                          /* Remove member details when not hovering */
-  opacity: 0;
-  transition: 1s ease;
+    opacity: 0;
+    transition: 1s ease;
 }
 
 .da-members:hover .content-3QAtGj,
 .da-members:hover .name-uJV0GL,
 .da-members:hover {                     /* Shows Up on Hover */
-  opacity: 1;
-  transform: translate(0px);
-  transition: all 300ms ease;
+    opacity: 1;
+    transform: translate(0px);
+    transition: all 300ms ease;
 }
 
 .da-members:hover {                     /* Background of the list */
-  background: var(--member-list-background-color) !important;
+    background: var(--member-list-background-color) !important;
 }
 
 .privateChannels-1nO12o .content-3QAtGj,
 .privateChannels-1nO12o .name-uJV0GL,
 .content-98HsJk {      /* So Private Channels don't get effected by the code */
-  opacity: 1;
+opacity: 1;
 }
 
 .members-1998pB:hover .membersGroup-v9BXpm {     /* Roles categories in list */
-  font-size: 12px;
-  text-align:center;
-  margin-bottom: 2px;
-  opacity: 1;
+    font-size: 12px;
+    text-align:center;
+    margin-bottom: 2px;
+    opacity: 1;
 }
 /* ---------- */
 
 
 
 /* --Bigger profile picture on hover-- */
-  .da-containerCozy .wrapper-3t9DeA:hover {       /* Resize on hover */
-  transform: scale(2);
-  transition: all .7s ease;
-  z-index: 1;
+.da-containerCozy .wrapper-3t9DeA:hover {       /* Resize on hover */
+    transform: scale(2);
+    transition: all .7s ease;
+    z-index: 1;
 }
 /* ---------- */
 
@@ -261,7 +261,7 @@ padding-right:20px;
 
 /* -- Square profile picture --*/
 .da-avatar foreignObject {
-  mask: none;
+    mask: none;
 }
 /* ---------- */
 
@@ -270,16 +270,16 @@ padding-right:20px;
 /* --MEMBER DETAILS-- */
 .headerPlaying-j0WQBV,
 .headerStreaming-2FjmGz {           /* Color when playing or streaming */
-  background-color: var(--member-detail-color-playing);
+    background-color: var(--member-detail-color-playing);
 }
 
 .body-3iLsc4 {                      /* Role and notes */
-  background-color: #2f3136;
-  color: hsla(0,0%,100%,.8);
+    background-color: #2f3136;
+    color: hsla(0,0%,100%,.8);
 }
 
 .da-avatarHint>* {                  /* Make the view profile square */
-  mask: none;
+    mask: none;
 }
 /* ---------- */
 
@@ -292,34 +292,34 @@ padding-right:20px;
     transition: ease 1s ;
     transform: rotate(360deg);
     opacity: 1;
-  }
+}
 
 #bd-pub-button {                                /* Better Discord public server button */
     opacity: 0.8;
 }
 
 .guilds-1SWlCJ {                                /* Server list */
-  background-color: var(--server-list-background);
-  margin-bottom: 0.2rem;
+    background-color: var(--server-list-background);
+    margin-bottom: 0.2rem;
 }
 
 .wrapper-25eVIn * {                             /* Make the server icons square */
-  mask: none;
+    mask: none;
 }
 
 .guilds-1SWlCJ:first-child {                    /* Home button */
-  margin-top: 0.4rem;
+    margin-top: 0.4rem;
 }
 
 svg [name='Nova_Discord'] {                     /* Home icon */
-  background-image: var(--home-image);
-  background-size: cover;
-  width: 48px ;
-  height: 48px ;
+    background-image: var(--home-image);
+    background-size: cover;
+    width: 48px ;
+    height: 48px ;
 }
 
 svg [name='Nova_Discord']>path {                /* Remove the discord icon */
-  display: none ;
+    display: none ;
 }
 /* ---------- */
 
@@ -329,59 +329,59 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 /* ---- 7. CHANNELS ---- */
 .container-PNkimc .unreadBottom-3hWQ7c {  /* Overlapping div at the bottom of the list */
-  background: transparent;
+    background: transparent;
 }
 
 .container-PNkimc>div {                   /* Channel list  */
-  background: var(--secondary-transparency) ;
+    background: var(--secondary-transparency) ;
 }
 
 .da-privateChannels>* {                   /* Direct messages, friends... list */
-  background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .container-PNkimc{                        /* Channels contaner */
-  margin-right: 0.5rem;
-  border-right: solid 1px rgba(0, 0, 0, 0.3);
+    margin-right: 0.5rem;
+    border-right: solid 1px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-2K8pFh {                         /* Server channel bar */
-  margin:  0 0.2rem 0.5rem 0.5rem;
+    margin:  0 0.2rem 0.5rem 0.5rem;
 }
 
 
 
 /* -- Bottom bars -- */
 .panels-j1Uci_ {
-  margin-top: 0.3rem;
+    margin-top: 0.3rem;
 }
 
 .container-3baos1 .horizontal-2EEEnY {            /* User status bar */
-  border-radius: 10%;
-  margin-right: 0.5rem;
+    border-radius: 10%;
+    margin-right: 0.5rem;
 }
 
 .container-3baos1 {                               /* Bottom profile bar */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
-  padding-right: 0px;
-  margin-right: 10px;
-  width: 95%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+    padding-right: 0px;
+    margin-right: 10px;
+    width: 95%;
 }
 
 .container-3baos1 .horizontal-2EEEnY button {     /* Mute, deafen, settings buttons */
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 45%;
-  margin-right: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 45%;
+    margin-right: 2px;
 }
 
 .container-1giJp5 {                               /* Voice chat connect */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-  margin-right: 5px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    margin-right: 5px;
 }
 
 .panel-24C3ux  {                                /* PLaying game */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-  margin-right: 5px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    margin-right: 5px;
 }
 /* ---------- */
 
@@ -391,34 +391,34 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 /* ---- 8. FIND COMMUNITIES ---- */
 .da-guildList .da-card {                  /* Cards */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .da-guildList .card-3DjzTQ:hover {        /* Cards hover */
-  background: var(--inner-card-color);
+    background: var(--inner-card-color);
 }
 
 .bg-AYqtMd {                              /* Remove background image */
-  display: none;
+    display: none;
 }
 
 .content-98HsJk .pageWrapper-1PgVDX {     /* Main background */
-  background: transparent ;
+    background: transparent ;
 }
 
 .theme-dark .searchBox-3Y2Vi7 {           /* Search bar */
-  background-color: rgba(25, 25, 25, 0.95) ;
-  border: solid 1px rgba(255, 255, 255, 0.1) ;
-  border-radius: 20px;
+    background-color: rgba(25, 25, 25, 0.95) ;
+    border: solid 1px rgba(255, 255, 255, 0.1) ;
+    border-radius: 20px;
 }
 
 .da-searchSection .da-searchHelpText {    /* Hide the text hidden behind the search bar */
-  opacity: 0;
+    opacity: 0;
 }
 
 .da-searchSection .da-searchHelpTextVisible {   /* Displays it when it shows */
-  opacity: 1;
-  transition: 300ms ease;
+    opacity: 1;
+    transition: 300ms ease;
 }
 /* ---------- */
 
@@ -428,34 +428,34 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 /* ---- 9. MENU BAR ---- */
 .typeWindows-1za-n7 {                     /* Top bar */
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.25));
-  box-shadow: 0px -5px 0px rgba(0, 0, 0, 0.4);
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.25));
+    box-shadow: 0px -5px 0px rgba(0, 0, 0, 0.4);
 }
 
 .searchBar-3dMhjb {                       /* Search bar */
-  background-color: inherit ;
+    background-color: inherit ;
 }
 
 .searchBar-3dMhjb:hover {                 /* Search bar hover */
-  background-color: rgba(0, 0, 0, 0.3) ;
-  transition: 300ms ease;
+    background-color: rgba(0, 0, 0, 0.3) ;
+    transition: 300ms ease;
 }
 
 .public-DraftEditorPlaceholder-inner {    /* Searchbar text */
-  color: rgb(220, 221, 222);
-  opacity: 1  ;
+    color: rgb(220, 221, 222);
+    opacity: 1  ;
 }
 
 .winButtonMinMax-PBQ3gm:hover {           /* Minimize window */
-  color: var(--minimize-color);
+    color: var(--minimize-color);
 }
 
 .winButtonMinMax:hover {                  /* Maximize window */
-  color: var(--maximize-color);
+    color: var(--maximize-color);
 }
 
 .winButtonMinMax:hover {                  /* Close window */
-  color: var(--close-color);
+    color: var(--close-color);
 }
 /* ---------- */
 
@@ -465,43 +465,43 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 
 /* ---- 10. MESSAGE AND MEMBER SEARCH ---- */
 .theme-dark .da-searchResultsWrap {         /* Message and Member search*/
-  z-index: 200 ;
-  background-color: inherit;
-  border-radius: 10px;
-  border-left: solid rgba(0, 0, 0, 0.4) 1px;
+    z-index: 200 ;
+    background-color: inherit;
+    border-radius: 10px;
+    border-left: solid rgba(0, 0, 0, 0.4) 1px;
 }
 
 .theme-dark  .da-searchHeader {                 /* Header. Total result, recent, pertinent container */
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  opacity: 1 ;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 1 ;
 }
 
 .theme-dark .da-tab,
 .theme-dark .da-totalResults {                  /* Total result, recent, pertinent */
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .theme-dark .channelSeparator-1X1FuH .channelName-1QajIf {  /* Channel name*/
-  background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .theme-dark .searchResult-3pzFAB .hit-NLlWXA,
 .theme-dark .searchResult-3pzFAB,
 .theme-dark .searchResultMessage-2VxO12 .hit-NLlWXA,
 .theme-dark .searchResult-3pzFAB.expanded-v2Szsz .searchResultMessage-2VxO12.hit-NLlWXA {       /* Selected message */
-  background-color: rgba(0, 0, 0, 0.4) ;
-  box-shadow: none ;
-  border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4) ;
+    box-shadow: none ;
+    border-radius: 10px;
 }
 
 .theme-dark .searchResultMessage-2VxO12 {       /* Center message */
- margin: 0px 0px 5px 0px;
+    margin: 0px 0px 5px 0px;
 }
 
 .theme-dark .searchResult-3pzFAB:before,
 .theme-dark .searchResult-3pzFAB:after {        /* Fade at the top and bottom of a result */
-  background-image: none;
+    background-image: none;
 }
 /* ---------- */
 
@@ -515,24 +515,24 @@ svg [name='Nova_Discord']>path {                /* Remove the discord icon */
 .activityFeed-1C0EmJ .card-GqTca8,      /* Cards */
 .theme-dark .popout-3G62UL,             /* Hover popout */
 .buttonColor-1agP3J {                   /* Share button */
-  background-color: rgba(0, 0, 0, 0.70);
+    background-color: rgba(0, 0, 0, 0.70);
 }
 
 .da-activityFeed .da-card .da-inset {   /* Friends in-game activity */
-     background-color: transparent;
-     border-left: solid 2px var(--accent-color-1);
+    background-color: transparent;
+    border-left: solid 2px var(--accent-color-1);
 }
 
 .da-popoutContainer:hover {                     /* Recently played hover */
-  background-color: rgba(0, 0, 0, 0.50) !important;
+    background-color: rgba(0, 0, 0, 0.50) !important;
 }
 
 .da-popoutContainer .da-memberListItem:hover {  /* Recently player username hover */
-  background-color: rgba(100, 100, 100, 0.65) !important;
+    background-color: rgba(100, 100, 100, 0.65) !important;
 }
 
 aside .card-GqTca8 .da-clickable {              /* Quick launcher games */
-  background-color: transparent;
+    background-color: transparent;
 }
 /* ---------- */
 
@@ -540,7 +540,7 @@ aside .card-GqTca8 .da-clickable {              /* Quick launcher games */
 
 /* --Library-- */
 .da-stickyScroller .stickyHeader-1pqx0j {           /* List header */
-  background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
 .da-systemPad .da-rowWrapper .da-bodyCell button {   /* Play button */
@@ -555,21 +555,21 @@ aside .card-GqTca8 .da-clickable {              /* Quick launcher games */
 
 /* --Nitro tab-- */
 .theme-dark .tile-QA_yMc {          /* Game perks card */
-  background: var(--inner-card-color) ;
+    background: var(--inner-card-color) ;
 }
 
 .container-hXbkd3>* {               /* Remove left and right gradients */
-  background-image: none;
+    background-image: none;
 }
 
 .container-hXbkd3 {                 /* Add bar to replace the gradients */
-  border-top: solid 1px var(--accent-color-1);
-  border-bottom: solid 1px var(--accent-color-1);
+    border-top: solid 1px var(--accent-color-1);
+    border-bottom: solid 1px var(--accent-color-1);
 }
 
 .da-premiumContainer .da-categoryHeader {
-  border: none ;
-  margin-bottom:-5px;
+    border: none ;
+    margin-bottom:-5px;
 }
 
 .tier1Banner-1B_WXY.da-tier1Banner {
@@ -581,26 +581,48 @@ aside .card-GqTca8 .da-clickable {              /* Quick launcher games */
 
 
 /* --Friends tab-- */
-.da-themed .da-tabBar div {                     /* Buttons: online, all, pending, blocked */
-  background-color: rgba(0, 0, 0, 0.35);
+.da-themed .da-tabBar div {                             /* Buttons: online, all, pending, blocked */
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
-.topPill-30KHOu .da-selected {                  /* Selected button */
+.topPill-30KHOu .da-selected {                          /* Selected button */
     background-color: var(--accent-color-1) !important;
 }
 
+#app-mount .container-1D34oG {                          /* Friends list */
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+#app-mount .container-1D34oG  .da-actions  {            /* Buttons container */
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+#app-mount .container-1D34oG  .actionButton-uPB8Fs {    /* Buttons*/
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.da-nowPlayingColumn {                                  /* Now playing */
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.da-nowPlayingColumn .emptyCard-1RJw8n {
+    background-color: var(--accent-color-1);
+}
+
+
+
 .friendsTable-133bsv .da-friendsRow {           /* Friend list member */
-  background-color: rgba(0, 0, 0, 0.15);
-  box-shadow: -1px 0px 0px 0px var(--accent-color-1);
-  margin-left:10px;
-  padding-left:5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: -1px 0px 0px 0px var(--accent-color-1);
+    margin-left:10px;
+    padding-left:5px;
 }
 
 .friendsTable-133bsv .da-friendsRow:hover {    /* Friend list member hover */
-  background-color: rgba(0, 0, 0, 0.50) ;
-  box-shadow: -1px 0px 0px 0px var(--accent-color-1);
-  border-radius:0px;
-  margin-left:10px ;
-  padding-left:5px ;
+    background-color: rgba(0, 0, 0, 0.50) ;
+    box-shadow: -1px 0px 0px 0px var(--accent-color-1);
+    border-radius:0px;
+    margin-left:10px ;
+    padding-left:5px ;
 }
 /* ---------- */
